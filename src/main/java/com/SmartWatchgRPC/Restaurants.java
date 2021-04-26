@@ -14,6 +14,3971 @@ public final class Restaurants {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface locationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:location)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double latitude = 1;</code>
+     */
+    double getLatitude();
+
+    /**
+     * <code>double longtitude = 2;</code>
+     */
+    double getLongtitude();
+  }
+  /**
+   * Protobuf type {@code location}
+   */
+  public  static final class location extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:location)
+      locationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use location.newBuilder() to construct.
+    private location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private location() {
+      latitude_ = 0D;
+      longtitude_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private location(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              latitude_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              longtitude_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_location_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_location_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.location.class, com.SmartWatchgRPC.Restaurants.location.Builder.class);
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 1;
+    private double latitude_;
+    /**
+     * <code>double latitude = 1;</code>
+     */
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGTITUDE_FIELD_NUMBER = 2;
+    private double longtitude_;
+    /**
+     * <code>double longtitude = 2;</code>
+     */
+    public double getLongtitude() {
+      return longtitude_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (latitude_ != 0D) {
+        output.writeDouble(1, latitude_);
+      }
+      if (longtitude_ != 0D) {
+        output.writeDouble(2, longtitude_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (latitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, latitude_);
+      }
+      if (longtitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, longtitude_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.location)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.location other = (com.SmartWatchgRPC.Restaurants.location) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLatitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLatitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLongtitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLongtitude()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLatitude()));
+      hash = (37 * hash) + LONGTITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLongtitude()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.location parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.location prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code location}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:location)
+        com.SmartWatchgRPC.Restaurants.locationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_location_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_location_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.location.class, com.SmartWatchgRPC.Restaurants.location.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.location.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        latitude_ = 0D;
+
+        longtitude_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_location_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.location getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.location.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.location build() {
+        com.SmartWatchgRPC.Restaurants.location result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.location buildPartial() {
+        com.SmartWatchgRPC.Restaurants.location result = new com.SmartWatchgRPC.Restaurants.location(this);
+        result.latitude_ = latitude_;
+        result.longtitude_ = longtitude_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.location) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.location)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.location other) {
+        if (other == com.SmartWatchgRPC.Restaurants.location.getDefaultInstance()) return this;
+        if (other.getLatitude() != 0D) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongtitude() != 0D) {
+          setLongtitude(other.getLongtitude());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.location parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.location) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double latitude_ ;
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public double getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public Builder setLatitude(double value) {
+        
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double latitude = 1;</code>
+       */
+      public Builder clearLatitude() {
+        
+        latitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double longtitude_ ;
+      /**
+       * <code>double longtitude = 2;</code>
+       */
+      public double getLongtitude() {
+        return longtitude_;
+      }
+      /**
+       * <code>double longtitude = 2;</code>
+       */
+      public Builder setLongtitude(double value) {
+        
+        longtitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double longtitude = 2;</code>
+       */
+      public Builder clearLongtitude() {
+        
+        longtitude_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:location)
+    }
+
+    // @@protoc_insertion_point(class_scope:location)
+    private static final com.SmartWatchgRPC.Restaurants.location DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.location();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.location getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<location>
+        PARSER = new com.google.protobuf.AbstractParser<location>() {
+      @java.lang.Override
+      public location parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new location(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<location> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<location> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.location getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface restaurantOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:restaurant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getRestaurantDetailsList();
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    int getRestaurantDetailsCount();
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    java.lang.String getRestaurantDetails(int index);
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRestaurantDetailsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code restaurant}
+   */
+  public  static final class restaurant extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:restaurant)
+      restaurantOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use restaurant.newBuilder() to construct.
+    private restaurant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private restaurant() {
+      restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private restaurant(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                restaurantDetails_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              restaurantDetails_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          restaurantDetails_ = restaurantDetails_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_restaurant_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_restaurant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.restaurant.class, com.SmartWatchgRPC.Restaurants.restaurant.Builder.class);
+    }
+
+    public static final int RESTAURANTDETAILS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList restaurantDetails_;
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRestaurantDetailsList() {
+      return restaurantDetails_;
+    }
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    public int getRestaurantDetailsCount() {
+      return restaurantDetails_.size();
+    }
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    public java.lang.String getRestaurantDetails(int index) {
+      return restaurantDetails_.get(index);
+    }
+    /**
+     * <code>repeated string restaurantDetails = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRestaurantDetailsBytes(int index) {
+      return restaurantDetails_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < restaurantDetails_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restaurantDetails_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < restaurantDetails_.size(); i++) {
+          dataSize += computeStringSizeNoTag(restaurantDetails_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRestaurantDetailsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.restaurant)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.restaurant other = (com.SmartWatchgRPC.Restaurants.restaurant) obj;
+
+      boolean result = true;
+      result = result && getRestaurantDetailsList()
+          .equals(other.getRestaurantDetailsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRestaurantDetailsCount() > 0) {
+        hash = (37 * hash) + RESTAURANTDETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getRestaurantDetailsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.restaurant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.restaurant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code restaurant}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:restaurant)
+        com.SmartWatchgRPC.Restaurants.restaurantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_restaurant_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_restaurant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.restaurant.class, com.SmartWatchgRPC.Restaurants.restaurant.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.restaurant.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_restaurant_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.restaurant getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.restaurant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.restaurant build() {
+        com.SmartWatchgRPC.Restaurants.restaurant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.restaurant buildPartial() {
+        com.SmartWatchgRPC.Restaurants.restaurant result = new com.SmartWatchgRPC.Restaurants.restaurant(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          restaurantDetails_ = restaurantDetails_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.restaurantDetails_ = restaurantDetails_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.restaurant) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.restaurant)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.restaurant other) {
+        if (other == com.SmartWatchgRPC.Restaurants.restaurant.getDefaultInstance()) return this;
+        if (!other.restaurantDetails_.isEmpty()) {
+          if (restaurantDetails_.isEmpty()) {
+            restaurantDetails_ = other.restaurantDetails_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRestaurantDetailsIsMutable();
+            restaurantDetails_.addAll(other.restaurantDetails_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.restaurant parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.restaurant) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRestaurantDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          restaurantDetails_ = new com.google.protobuf.LazyStringArrayList(restaurantDetails_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRestaurantDetailsList() {
+        return restaurantDetails_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public int getRestaurantDetailsCount() {
+        return restaurantDetails_.size();
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public java.lang.String getRestaurantDetails(int index) {
+        return restaurantDetails_.get(index);
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRestaurantDetailsBytes(int index) {
+        return restaurantDetails_.getByteString(index);
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public Builder setRestaurantDetails(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRestaurantDetailsIsMutable();
+        restaurantDetails_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public Builder addRestaurantDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRestaurantDetailsIsMutable();
+        restaurantDetails_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public Builder addAllRestaurantDetails(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRestaurantDetailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, restaurantDetails_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public Builder clearRestaurantDetails() {
+        restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restaurantDetails = 1;</code>
+       */
+      public Builder addRestaurantDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRestaurantDetailsIsMutable();
+        restaurantDetails_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:restaurant)
+    }
+
+    // @@protoc_insertion_point(class_scope:restaurant)
+    private static final com.SmartWatchgRPC.Restaurants.restaurant DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.restaurant();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.restaurant getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<restaurant>
+        PARSER = new com.google.protobuf.AbstractParser<restaurant>() {
+      @java.lang.Override
+      public restaurant parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new restaurant(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<restaurant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<restaurant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.restaurant getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface reservationDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:reservationDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string time = 1;</code>
+     */
+    java.lang.String getTime();
+    /**
+     * <code>string time = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTimeBytes();
+
+    /**
+     * <code>string restaurantName = 2;</code>
+     */
+    java.lang.String getRestaurantName();
+    /**
+     * <code>string restaurantName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRestaurantNameBytes();
+
+    /**
+     * <code>int32 numberOfSeats = 3;</code>
+     */
+    int getNumberOfSeats();
+  }
+  /**
+   * Protobuf type {@code reservationDetails}
+   */
+  public  static final class reservationDetails extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:reservationDetails)
+      reservationDetailsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use reservationDetails.newBuilder() to construct.
+    private reservationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private reservationDetails() {
+      time_ = "";
+      restaurantName_ = "";
+      numberOfSeats_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private reservationDetails(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              time_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              restaurantName_ = s;
+              break;
+            }
+            case 24: {
+
+              numberOfSeats_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_reservationDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_reservationDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.reservationDetails.class, com.SmartWatchgRPC.Restaurants.reservationDetails.Builder.class);
+    }
+
+    public static final int TIME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object time_;
+    /**
+     * <code>string time = 1;</code>
+     */
+    public java.lang.String getTime() {
+      java.lang.Object ref = time_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        time_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string time = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTimeBytes() {
+      java.lang.Object ref = time_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        time_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESTAURANTNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object restaurantName_;
+    /**
+     * <code>string restaurantName = 2;</code>
+     */
+    public java.lang.String getRestaurantName() {
+      java.lang.Object ref = restaurantName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        restaurantName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string restaurantName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRestaurantNameBytes() {
+      java.lang.Object ref = restaurantName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        restaurantName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUMBEROFSEATS_FIELD_NUMBER = 3;
+    private int numberOfSeats_;
+    /**
+     * <code>int32 numberOfSeats = 3;</code>
+     */
+    public int getNumberOfSeats() {
+      return numberOfSeats_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, time_);
+      }
+      if (!getRestaurantNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, restaurantName_);
+      }
+      if (numberOfSeats_ != 0) {
+        output.writeInt32(3, numberOfSeats_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, time_);
+      }
+      if (!getRestaurantNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, restaurantName_);
+      }
+      if (numberOfSeats_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, numberOfSeats_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.reservationDetails)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.reservationDetails other = (com.SmartWatchgRPC.Restaurants.reservationDetails) obj;
+
+      boolean result = true;
+      result = result && getTime()
+          .equals(other.getTime());
+      result = result && getRestaurantName()
+          .equals(other.getRestaurantName());
+      result = result && (getNumberOfSeats()
+          == other.getNumberOfSeats());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime().hashCode();
+      hash = (37 * hash) + RESTAURANTNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRestaurantName().hashCode();
+      hash = (37 * hash) + NUMBEROFSEATS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfSeats();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.reservationDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code reservationDetails}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:reservationDetails)
+        com.SmartWatchgRPC.Restaurants.reservationDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.reservationDetails.class, com.SmartWatchgRPC.Restaurants.reservationDetails.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.reservationDetails.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        time_ = "";
+
+        restaurantName_ = "";
+
+        numberOfSeats_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationDetails getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.reservationDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationDetails build() {
+        com.SmartWatchgRPC.Restaurants.reservationDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationDetails buildPartial() {
+        com.SmartWatchgRPC.Restaurants.reservationDetails result = new com.SmartWatchgRPC.Restaurants.reservationDetails(this);
+        result.time_ = time_;
+        result.restaurantName_ = restaurantName_;
+        result.numberOfSeats_ = numberOfSeats_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.reservationDetails) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.reservationDetails)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.reservationDetails other) {
+        if (other == com.SmartWatchgRPC.Restaurants.reservationDetails.getDefaultInstance()) return this;
+        if (!other.getTime().isEmpty()) {
+          time_ = other.time_;
+          onChanged();
+        }
+        if (!other.getRestaurantName().isEmpty()) {
+          restaurantName_ = other.restaurantName_;
+          onChanged();
+        }
+        if (other.getNumberOfSeats() != 0) {
+          setNumberOfSeats(other.getNumberOfSeats());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.reservationDetails parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.reservationDetails) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object time_ = "";
+      /**
+       * <code>string time = 1;</code>
+       */
+      public java.lang.String getTime() {
+        java.lang.Object ref = time_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          time_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string time = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTimeBytes() {
+        java.lang.Object ref = time_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          time_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string time = 1;</code>
+       */
+      public Builder setTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string time = 1;</code>
+       */
+      public Builder clearTime() {
+        
+        time_ = getDefaultInstance().getTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string time = 1;</code>
+       */
+      public Builder setTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        time_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object restaurantName_ = "";
+      /**
+       * <code>string restaurantName = 2;</code>
+       */
+      public java.lang.String getRestaurantName() {
+        java.lang.Object ref = restaurantName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          restaurantName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string restaurantName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRestaurantNameBytes() {
+        java.lang.Object ref = restaurantName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          restaurantName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string restaurantName = 2;</code>
+       */
+      public Builder setRestaurantName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        restaurantName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string restaurantName = 2;</code>
+       */
+      public Builder clearRestaurantName() {
+        
+        restaurantName_ = getDefaultInstance().getRestaurantName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string restaurantName = 2;</code>
+       */
+      public Builder setRestaurantNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        restaurantName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int numberOfSeats_ ;
+      /**
+       * <code>int32 numberOfSeats = 3;</code>
+       */
+      public int getNumberOfSeats() {
+        return numberOfSeats_;
+      }
+      /**
+       * <code>int32 numberOfSeats = 3;</code>
+       */
+      public Builder setNumberOfSeats(int value) {
+        
+        numberOfSeats_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numberOfSeats = 3;</code>
+       */
+      public Builder clearNumberOfSeats() {
+        
+        numberOfSeats_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:reservationDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:reservationDetails)
+    private static final com.SmartWatchgRPC.Restaurants.reservationDetails DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.reservationDetails();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.reservationDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<reservationDetails>
+        PARSER = new com.google.protobuf.AbstractParser<reservationDetails>() {
+      @java.lang.Override
+      public reservationDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new reservationDetails(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<reservationDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<reservationDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.reservationDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface reservationConfirmationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:reservationConfirmation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    boolean getConfirmation();
+
+    /**
+     * <code>string reservationSummary = 2;</code>
+     */
+    java.lang.String getReservationSummary();
+    /**
+     * <code>string reservationSummary = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getReservationSummaryBytes();
+  }
+  /**
+   * Protobuf type {@code reservationConfirmation}
+   */
+  public  static final class reservationConfirmation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:reservationConfirmation)
+      reservationConfirmationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use reservationConfirmation.newBuilder() to construct.
+    private reservationConfirmation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private reservationConfirmation() {
+      confirmation_ = false;
+      reservationSummary_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private reservationConfirmation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              confirmation_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reservationSummary_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.reservationConfirmation.class, com.SmartWatchgRPC.Restaurants.reservationConfirmation.Builder.class);
+    }
+
+    public static final int CONFIRMATION_FIELD_NUMBER = 1;
+    private boolean confirmation_;
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    public boolean getConfirmation() {
+      return confirmation_;
+    }
+
+    public static final int RESERVATIONSUMMARY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object reservationSummary_;
+    /**
+     * <code>string reservationSummary = 2;</code>
+     */
+    public java.lang.String getReservationSummary() {
+      java.lang.Object ref = reservationSummary_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservationSummary_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reservationSummary = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReservationSummaryBytes() {
+      java.lang.Object ref = reservationSummary_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reservationSummary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (confirmation_ != false) {
+        output.writeBool(1, confirmation_);
+      }
+      if (!getReservationSummaryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reservationSummary_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (confirmation_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, confirmation_);
+      }
+      if (!getReservationSummaryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reservationSummary_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.reservationConfirmation)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.reservationConfirmation other = (com.SmartWatchgRPC.Restaurants.reservationConfirmation) obj;
+
+      boolean result = true;
+      result = result && (getConfirmation()
+          == other.getConfirmation());
+      result = result && getReservationSummary()
+          .equals(other.getReservationSummary());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getConfirmation());
+      hash = (37 * hash) + RESERVATIONSUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationSummary().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.reservationConfirmation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code reservationConfirmation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:reservationConfirmation)
+        com.SmartWatchgRPC.Restaurants.reservationConfirmationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.reservationConfirmation.class, com.SmartWatchgRPC.Restaurants.reservationConfirmation.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.reservationConfirmation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        confirmation_ = false;
+
+        reservationSummary_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationConfirmation getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.reservationConfirmation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationConfirmation build() {
+        com.SmartWatchgRPC.Restaurants.reservationConfirmation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.reservationConfirmation buildPartial() {
+        com.SmartWatchgRPC.Restaurants.reservationConfirmation result = new com.SmartWatchgRPC.Restaurants.reservationConfirmation(this);
+        result.confirmation_ = confirmation_;
+        result.reservationSummary_ = reservationSummary_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.reservationConfirmation) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.reservationConfirmation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.reservationConfirmation other) {
+        if (other == com.SmartWatchgRPC.Restaurants.reservationConfirmation.getDefaultInstance()) return this;
+        if (other.getConfirmation() != false) {
+          setConfirmation(other.getConfirmation());
+        }
+        if (!other.getReservationSummary().isEmpty()) {
+          reservationSummary_ = other.reservationSummary_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.reservationConfirmation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.reservationConfirmation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean confirmation_ ;
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public boolean getConfirmation() {
+        return confirmation_;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder setConfirmation(boolean value) {
+        
+        confirmation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder clearConfirmation() {
+        
+        confirmation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reservationSummary_ = "";
+      /**
+       * <code>string reservationSummary = 2;</code>
+       */
+      public java.lang.String getReservationSummary() {
+        java.lang.Object ref = reservationSummary_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reservationSummary_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reservationSummary = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReservationSummaryBytes() {
+        java.lang.Object ref = reservationSummary_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reservationSummary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reservationSummary = 2;</code>
+       */
+      public Builder setReservationSummary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reservationSummary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reservationSummary = 2;</code>
+       */
+      public Builder clearReservationSummary() {
+        
+        reservationSummary_ = getDefaultInstance().getReservationSummary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reservationSummary = 2;</code>
+       */
+      public Builder setReservationSummaryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reservationSummary_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:reservationConfirmation)
+    }
+
+    // @@protoc_insertion_point(class_scope:reservationConfirmation)
+    private static final com.SmartWatchgRPC.Restaurants.reservationConfirmation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.reservationConfirmation();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.reservationConfirmation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<reservationConfirmation>
+        PARSER = new com.google.protobuf.AbstractParser<reservationConfirmation>() {
+      @java.lang.Override
+      public reservationConfirmation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new reservationConfirmation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<reservationConfirmation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<reservationConfirmation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.reservationConfirmation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface orderDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:orderDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    boolean getConfirmation();
+
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    java.util.List<java.lang.String>
+        getItemList();
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    int getItemCount();
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    java.lang.String getItem(int index);
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getItemBytes(int index);
+
+    /**
+     * <code>string paymentDetails = 3;</code>
+     */
+    java.lang.String getPaymentDetails();
+    /**
+     * <code>string paymentDetails = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPaymentDetailsBytes();
+  }
+  /**
+   * Protobuf type {@code orderDetails}
+   */
+  public  static final class orderDetails extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:orderDetails)
+      orderDetailsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use orderDetails.newBuilder() to construct.
+    private orderDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private orderDetails() {
+      confirmation_ = false;
+      item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      paymentDetails_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private orderDetails(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              confirmation_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                item_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              item_.add(s);
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              paymentDetails_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          item_ = item_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.orderDetails.class, com.SmartWatchgRPC.Restaurants.orderDetails.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int CONFIRMATION_FIELD_NUMBER = 1;
+    private boolean confirmation_;
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    public boolean getConfirmation() {
+      return confirmation_;
+    }
+
+    public static final int ITEM_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList item_;
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getItemList() {
+      return item_;
+    }
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    public int getItemCount() {
+      return item_.size();
+    }
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    public java.lang.String getItem(int index) {
+      return item_.get(index);
+    }
+    /**
+     * <code>repeated string item = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getItemBytes(int index) {
+      return item_.getByteString(index);
+    }
+
+    public static final int PAYMENTDETAILS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object paymentDetails_;
+    /**
+     * <code>string paymentDetails = 3;</code>
+     */
+    public java.lang.String getPaymentDetails() {
+      java.lang.Object ref = paymentDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paymentDetails_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string paymentDetails = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPaymentDetailsBytes() {
+      java.lang.Object ref = paymentDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paymentDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (confirmation_ != false) {
+        output.writeBool(1, confirmation_);
+      }
+      for (int i = 0; i < item_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, item_.getRaw(i));
+      }
+      if (!getPaymentDetailsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paymentDetails_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (confirmation_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, confirmation_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < item_.size(); i++) {
+          dataSize += computeStringSizeNoTag(item_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getItemList().size();
+      }
+      if (!getPaymentDetailsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paymentDetails_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.orderDetails)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.orderDetails other = (com.SmartWatchgRPC.Restaurants.orderDetails) obj;
+
+      boolean result = true;
+      result = result && (getConfirmation()
+          == other.getConfirmation());
+      result = result && getItemList()
+          .equals(other.getItemList());
+      result = result && getPaymentDetails()
+          .equals(other.getPaymentDetails());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getConfirmation());
+      if (getItemCount() > 0) {
+        hash = (37 * hash) + ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getItemList().hashCode();
+      }
+      hash = (37 * hash) + PAYMENTDETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getPaymentDetails().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.orderDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code orderDetails}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:orderDetails)
+        com.SmartWatchgRPC.Restaurants.orderDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.orderDetails.class, com.SmartWatchgRPC.Restaurants.orderDetails.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.orderDetails.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        confirmation_ = false;
+
+        item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        paymentDetails_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderDetails getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.orderDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderDetails build() {
+        com.SmartWatchgRPC.Restaurants.orderDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderDetails buildPartial() {
+        com.SmartWatchgRPC.Restaurants.orderDetails result = new com.SmartWatchgRPC.Restaurants.orderDetails(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.confirmation_ = confirmation_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          item_ = item_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.item_ = item_;
+        result.paymentDetails_ = paymentDetails_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.orderDetails) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.orderDetails)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.orderDetails other) {
+        if (other == com.SmartWatchgRPC.Restaurants.orderDetails.getDefaultInstance()) return this;
+        if (other.getConfirmation() != false) {
+          setConfirmation(other.getConfirmation());
+        }
+        if (!other.item_.isEmpty()) {
+          if (item_.isEmpty()) {
+            item_ = other.item_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureItemIsMutable();
+            item_.addAll(other.item_);
+          }
+          onChanged();
+        }
+        if (!other.getPaymentDetails().isEmpty()) {
+          paymentDetails_ = other.paymentDetails_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.orderDetails parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.orderDetails) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean confirmation_ ;
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public boolean getConfirmation() {
+        return confirmation_;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder setConfirmation(boolean value) {
+        
+        confirmation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder clearConfirmation() {
+        
+        confirmation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureItemIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          item_ = new com.google.protobuf.LazyStringArrayList(item_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getItemList() {
+        return item_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public int getItemCount() {
+        return item_.size();
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public java.lang.String getItem(int index) {
+        return item_.get(index);
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getItemBytes(int index) {
+        return item_.getByteString(index);
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public Builder setItem(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureItemIsMutable();
+        item_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public Builder addItem(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureItemIsMutable();
+        item_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public Builder addAllItem(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureItemIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, item_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public Builder clearItem() {
+        item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string item = 2;</code>
+       */
+      public Builder addItemBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureItemIsMutable();
+        item_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object paymentDetails_ = "";
+      /**
+       * <code>string paymentDetails = 3;</code>
+       */
+      public java.lang.String getPaymentDetails() {
+        java.lang.Object ref = paymentDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          paymentDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string paymentDetails = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPaymentDetailsBytes() {
+        java.lang.Object ref = paymentDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          paymentDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string paymentDetails = 3;</code>
+       */
+      public Builder setPaymentDetails(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        paymentDetails_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string paymentDetails = 3;</code>
+       */
+      public Builder clearPaymentDetails() {
+        
+        paymentDetails_ = getDefaultInstance().getPaymentDetails();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string paymentDetails = 3;</code>
+       */
+      public Builder setPaymentDetailsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        paymentDetails_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:orderDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:orderDetails)
+    private static final com.SmartWatchgRPC.Restaurants.orderDetails DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.orderDetails();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.orderDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<orderDetails>
+        PARSER = new com.google.protobuf.AbstractParser<orderDetails>() {
+      @java.lang.Override
+      public orderDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new orderDetails(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<orderDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<orderDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.orderDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface orderConfirmationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:orderConfirmation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    boolean getConfirmation();
+
+    /**
+     * <code>string orderSummary = 2;</code>
+     */
+    java.lang.String getOrderSummary();
+    /**
+     * <code>string orderSummary = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getOrderSummaryBytes();
+  }
+  /**
+   * Protobuf type {@code orderConfirmation}
+   */
+  public  static final class orderConfirmation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:orderConfirmation)
+      orderConfirmationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use orderConfirmation.newBuilder() to construct.
+    private orderConfirmation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private orderConfirmation() {
+      confirmation_ = false;
+      orderSummary_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private orderConfirmation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              confirmation_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderSummary_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_orderConfirmation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Restaurants.internal_static_orderConfirmation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Restaurants.orderConfirmation.class, com.SmartWatchgRPC.Restaurants.orderConfirmation.Builder.class);
+    }
+
+    public static final int CONFIRMATION_FIELD_NUMBER = 1;
+    private boolean confirmation_;
+    /**
+     * <code>bool confirmation = 1;</code>
+     */
+    public boolean getConfirmation() {
+      return confirmation_;
+    }
+
+    public static final int ORDERSUMMARY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object orderSummary_;
+    /**
+     * <code>string orderSummary = 2;</code>
+     */
+    public java.lang.String getOrderSummary() {
+      java.lang.Object ref = orderSummary_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderSummary_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string orderSummary = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrderSummaryBytes() {
+      java.lang.Object ref = orderSummary_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderSummary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (confirmation_ != false) {
+        output.writeBool(1, confirmation_);
+      }
+      if (!getOrderSummaryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orderSummary_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (confirmation_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, confirmation_);
+      }
+      if (!getOrderSummaryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orderSummary_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Restaurants.orderConfirmation)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Restaurants.orderConfirmation other = (com.SmartWatchgRPC.Restaurants.orderConfirmation) obj;
+
+      boolean result = true;
+      result = result && (getConfirmation()
+          == other.getConfirmation());
+      result = result && getOrderSummary()
+          .equals(other.getOrderSummary());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getConfirmation());
+      hash = (37 * hash) + ORDERSUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderSummary().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Restaurants.orderConfirmation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code orderConfirmation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:orderConfirmation)
+        com.SmartWatchgRPC.Restaurants.orderConfirmationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderConfirmation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Restaurants.orderConfirmation.class, com.SmartWatchgRPC.Restaurants.orderConfirmation.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Restaurants.orderConfirmation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        confirmation_ = false;
+
+        orderSummary_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Restaurants.internal_static_orderConfirmation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderConfirmation getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Restaurants.orderConfirmation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderConfirmation build() {
+        com.SmartWatchgRPC.Restaurants.orderConfirmation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Restaurants.orderConfirmation buildPartial() {
+        com.SmartWatchgRPC.Restaurants.orderConfirmation result = new com.SmartWatchgRPC.Restaurants.orderConfirmation(this);
+        result.confirmation_ = confirmation_;
+        result.orderSummary_ = orderSummary_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Restaurants.orderConfirmation) {
+          return mergeFrom((com.SmartWatchgRPC.Restaurants.orderConfirmation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.orderConfirmation other) {
+        if (other == com.SmartWatchgRPC.Restaurants.orderConfirmation.getDefaultInstance()) return this;
+        if (other.getConfirmation() != false) {
+          setConfirmation(other.getConfirmation());
+        }
+        if (!other.getOrderSummary().isEmpty()) {
+          orderSummary_ = other.orderSummary_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Restaurants.orderConfirmation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Restaurants.orderConfirmation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean confirmation_ ;
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public boolean getConfirmation() {
+        return confirmation_;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder setConfirmation(boolean value) {
+        
+        confirmation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool confirmation = 1;</code>
+       */
+      public Builder clearConfirmation() {
+        
+        confirmation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object orderSummary_ = "";
+      /**
+       * <code>string orderSummary = 2;</code>
+       */
+      public java.lang.String getOrderSummary() {
+        java.lang.Object ref = orderSummary_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          orderSummary_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string orderSummary = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOrderSummaryBytes() {
+        java.lang.Object ref = orderSummary_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderSummary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string orderSummary = 2;</code>
+       */
+      public Builder setOrderSummary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        orderSummary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string orderSummary = 2;</code>
+       */
+      public Builder clearOrderSummary() {
+        
+        orderSummary_ = getDefaultInstance().getOrderSummary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string orderSummary = 2;</code>
+       */
+      public Builder setOrderSummaryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        orderSummary_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:orderConfirmation)
+    }
+
+    // @@protoc_insertion_point(class_scope:orderConfirmation)
+    private static final com.SmartWatchgRPC.Restaurants.orderConfirmation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Restaurants.orderConfirmation();
+    }
+
+    public static com.SmartWatchgRPC.Restaurants.orderConfirmation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<orderConfirmation>
+        PARSER = new com.google.protobuf.AbstractParser<orderConfirmation>() {
+      @java.lang.Override
+      public orderConfirmation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new orderConfirmation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<orderConfirmation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<orderConfirmation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Restaurants.orderConfirmation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_location_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_location_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_restaurant_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_restaurant_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_reservationDetails_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_reservationDetails_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_reservationConfirmation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_reservationConfirmation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_orderDetails_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_orderDetails_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_orderConfirmation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_orderConfirmation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -23,9 +3988,22 @@ public final class Restaurants {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021restaurants.proto2\020\n\016getRestaurants2\021\n" +
-      "\017makeReservation2\013\n\tmakeOrderB\024\n\022com.Sma" +
-      "rtWatchgRPCb\006proto3"
+      "\n\021restaurants.proto\"0\n\010location\022\020\n\010latit" +
+      "ude\030\001 \001(\001\022\022\n\nlongtitude\030\002 \001(\001\"\'\n\nrestaur" +
+      "ant\022\031\n\021restaurantDetails\030\001 \003(\t\"Q\n\022reserv" +
+      "ationDetails\022\014\n\004time\030\001 \001(\t\022\026\n\016restaurant" +
+      "Name\030\002 \001(\t\022\025\n\rnumberOfSeats\030\003 \001(\005\"K\n\027res" +
+      "ervationConfirmation\022\024\n\014confirmation\030\001 \001" +
+      "(\010\022\032\n\022reservationSummary\030\002 \001(\t\"J\n\014orderD" +
+      "etails\022\024\n\014confirmation\030\001 \001(\010\022\014\n\004item\030\002 \003" +
+      "(\t\022\026\n\016paymentDetails\030\003 \001(\t\"?\n\021orderConfi" +
+      "rmation\022\024\n\014confirmation\030\001 \001(\010\022\024\n\014orderSu" +
+      "mmary\030\002 \001(\t2\251\001\n\013restaurants\022(\n\016getRestau" +
+      "rants\022\t.location\032\013.restaurant\022@\n\017makeRes" +
+      "ervation\022\023.reservationDetails\032\030.reservat" +
+      "ionConfirmation\022.\n\tmakeOrder\022\r.orderDeta" +
+      "ils\032\022.orderConfirmationB\024\n\022com.SmartWatc" +
+      "hgRPCb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39,6 +4017,42 @@ public final class Restaurants {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_location_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_location_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_location_descriptor,
+        new java.lang.String[] { "Latitude", "Longtitude", });
+    internal_static_restaurant_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_restaurant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_restaurant_descriptor,
+        new java.lang.String[] { "RestaurantDetails", });
+    internal_static_reservationDetails_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_reservationDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_reservationDetails_descriptor,
+        new java.lang.String[] { "Time", "RestaurantName", "NumberOfSeats", });
+    internal_static_reservationConfirmation_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_reservationConfirmation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_reservationConfirmation_descriptor,
+        new java.lang.String[] { "Confirmation", "ReservationSummary", });
+    internal_static_orderDetails_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_orderDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_orderDetails_descriptor,
+        new java.lang.String[] { "Confirmation", "Item", "PaymentDetails", });
+    internal_static_orderConfirmation_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_orderConfirmation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_orderConfirmation_descriptor,
+        new java.lang.String[] { "Confirmation", "OrderSummary", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

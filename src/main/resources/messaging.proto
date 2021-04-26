@@ -2,12 +2,44 @@ syntax = "proto3";
 
 option java_package = "com.SmartWatchgRPC";
 
-service receiveMessages{
+// Messaging Service
+service Messaging{
+
+	// rpc to check for new messages
+	rpc checkMessages(Empty) returns (stream Message);
+	
+	// rpc to send a new message
+	rpc sendMessage(Message) returns (messageConfirmation);
+	
+	// rpc to search old messages with a string
+	rpc searchMessages(searchKey) returns (stream Message);
 }
 
-service sendMessage{
+message Message {
+  string message = 1;
+  
 }
 
-service searchMessages{
+message messageConfirmation {
+  bool confirmation = 1;
+
 }
+
+message Empty {
+}
+
+message searchKey {
+  string searchKey = 1;
+
+}
+
+message searchResults {
+  repeated string messages = 1;
+
+}
+
+
+
+
+
 

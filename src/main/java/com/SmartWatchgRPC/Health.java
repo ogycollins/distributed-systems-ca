@@ -14,6 +14,2476 @@ public final class Health {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface statsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stats)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string activityType = 1;</code>
+     */
+    java.lang.String getActivityType();
+    /**
+     * <code>string activityType = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getActivityTypeBytes();
+
+    /**
+     * <code>int32 time = 2;</code>
+     */
+    int getTime();
+
+    /**
+     * <code>int32 distance = 3;</code>
+     */
+    int getDistance();
+
+    /**
+     * <code>int32 calories = 4;</code>
+     */
+    int getCalories();
+  }
+  /**
+   * Protobuf type {@code stats}
+   */
+  public  static final class stats extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:stats)
+      statsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use stats.newBuilder() to construct.
+    private stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private stats() {
+      activityType_ = "";
+      time_ = 0;
+      distance_ = 0;
+      calories_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private stats(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              activityType_ = s;
+              break;
+            }
+            case 16: {
+
+              time_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              distance_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              calories_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Health.internal_static_stats_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Health.internal_static_stats_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Health.stats.class, com.SmartWatchgRPC.Health.stats.Builder.class);
+    }
+
+    public static final int ACTIVITYTYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object activityType_;
+    /**
+     * <code>string activityType = 1;</code>
+     */
+    public java.lang.String getActivityType() {
+      java.lang.Object ref = activityType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activityType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string activityType = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActivityTypeBytes() {
+      java.lang.Object ref = activityType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        activityType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIME_FIELD_NUMBER = 2;
+    private int time_;
+    /**
+     * <code>int32 time = 2;</code>
+     */
+    public int getTime() {
+      return time_;
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 3;
+    private int distance_;
+    /**
+     * <code>int32 distance = 3;</code>
+     */
+    public int getDistance() {
+      return distance_;
+    }
+
+    public static final int CALORIES_FIELD_NUMBER = 4;
+    private int calories_;
+    /**
+     * <code>int32 calories = 4;</code>
+     */
+    public int getCalories() {
+      return calories_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getActivityTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, activityType_);
+      }
+      if (time_ != 0) {
+        output.writeInt32(2, time_);
+      }
+      if (distance_ != 0) {
+        output.writeInt32(3, distance_);
+      }
+      if (calories_ != 0) {
+        output.writeInt32(4, calories_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getActivityTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, activityType_);
+      }
+      if (time_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, time_);
+      }
+      if (distance_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, distance_);
+      }
+      if (calories_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, calories_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Health.stats)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Health.stats other = (com.SmartWatchgRPC.Health.stats) obj;
+
+      boolean result = true;
+      result = result && getActivityType()
+          .equals(other.getActivityType());
+      result = result && (getTime()
+          == other.getTime());
+      result = result && (getDistance()
+          == other.getDistance());
+      result = result && (getCalories()
+          == other.getCalories());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACTIVITYTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getActivityType().hashCode();
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime();
+      hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getDistance();
+      hash = (37 * hash) + CALORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getCalories();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.stats parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Health.stats prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stats}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stats)
+        com.SmartWatchgRPC.Health.statsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Health.internal_static_stats_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Health.internal_static_stats_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Health.stats.class, com.SmartWatchgRPC.Health.stats.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Health.stats.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        activityType_ = "";
+
+        time_ = 0;
+
+        distance_ = 0;
+
+        calories_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Health.internal_static_stats_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.stats getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Health.stats.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.stats build() {
+        com.SmartWatchgRPC.Health.stats result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.stats buildPartial() {
+        com.SmartWatchgRPC.Health.stats result = new com.SmartWatchgRPC.Health.stats(this);
+        result.activityType_ = activityType_;
+        result.time_ = time_;
+        result.distance_ = distance_;
+        result.calories_ = calories_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Health.stats) {
+          return mergeFrom((com.SmartWatchgRPC.Health.stats)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Health.stats other) {
+        if (other == com.SmartWatchgRPC.Health.stats.getDefaultInstance()) return this;
+        if (!other.getActivityType().isEmpty()) {
+          activityType_ = other.activityType_;
+          onChanged();
+        }
+        if (other.getTime() != 0) {
+          setTime(other.getTime());
+        }
+        if (other.getDistance() != 0) {
+          setDistance(other.getDistance());
+        }
+        if (other.getCalories() != 0) {
+          setCalories(other.getCalories());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Health.stats parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Health.stats) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object activityType_ = "";
+      /**
+       * <code>string activityType = 1;</code>
+       */
+      public java.lang.String getActivityType() {
+        java.lang.Object ref = activityType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          activityType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string activityType = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getActivityTypeBytes() {
+        java.lang.Object ref = activityType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          activityType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string activityType = 1;</code>
+       */
+      public Builder setActivityType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        activityType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string activityType = 1;</code>
+       */
+      public Builder clearActivityType() {
+        
+        activityType_ = getDefaultInstance().getActivityType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string activityType = 1;</code>
+       */
+      public Builder setActivityTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        activityType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int time_ ;
+      /**
+       * <code>int32 time = 2;</code>
+       */
+      public int getTime() {
+        return time_;
+      }
+      /**
+       * <code>int32 time = 2;</code>
+       */
+      public Builder setTime(int value) {
+        
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 time = 2;</code>
+       */
+      public Builder clearTime() {
+        
+        time_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int distance_ ;
+      /**
+       * <code>int32 distance = 3;</code>
+       */
+      public int getDistance() {
+        return distance_;
+      }
+      /**
+       * <code>int32 distance = 3;</code>
+       */
+      public Builder setDistance(int value) {
+        
+        distance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 distance = 3;</code>
+       */
+      public Builder clearDistance() {
+        
+        distance_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int calories_ ;
+      /**
+       * <code>int32 calories = 4;</code>
+       */
+      public int getCalories() {
+        return calories_;
+      }
+      /**
+       * <code>int32 calories = 4;</code>
+       */
+      public Builder setCalories(int value) {
+        
+        calories_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 calories = 4;</code>
+       */
+      public Builder clearCalories() {
+        
+        calories_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:stats)
+    }
+
+    // @@protoc_insertion_point(class_scope:stats)
+    private static final com.SmartWatchgRPC.Health.stats DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Health.stats();
+    }
+
+    public static com.SmartWatchgRPC.Health.stats getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<stats>
+        PARSER = new com.google.protobuf.AbstractParser<stats>() {
+      @java.lang.Override
+      public stats parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new stats(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<stats> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<stats> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Health.stats getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface feedbackOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:feedback)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string summary = 1;</code>
+     */
+    java.lang.String getSummary();
+    /**
+     * <code>string summary = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSummaryBytes();
+
+    /**
+     * <code>string feedback = 2;</code>
+     */
+    java.lang.String getFeedback();
+    /**
+     * <code>string feedback = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFeedbackBytes();
+  }
+  /**
+   * Protobuf type {@code feedback}
+   */
+  public  static final class feedback extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:feedback)
+      feedbackOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use feedback.newBuilder() to construct.
+    private feedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private feedback() {
+      summary_ = "";
+      feedback_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private feedback(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              summary_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              feedback_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Health.internal_static_feedback_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Health.internal_static_feedback_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Health.feedback.class, com.SmartWatchgRPC.Health.feedback.Builder.class);
+    }
+
+    public static final int SUMMARY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object summary_;
+    /**
+     * <code>string summary = 1;</code>
+     */
+    public java.lang.String getSummary() {
+      java.lang.Object ref = summary_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        summary_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string summary = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSummaryBytes() {
+      java.lang.Object ref = summary_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        summary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FEEDBACK_FIELD_NUMBER = 2;
+    private volatile java.lang.Object feedback_;
+    /**
+     * <code>string feedback = 2;</code>
+     */
+    public java.lang.String getFeedback() {
+      java.lang.Object ref = feedback_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        feedback_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string feedback = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFeedbackBytes() {
+      java.lang.Object ref = feedback_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        feedback_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSummaryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, summary_);
+      }
+      if (!getFeedbackBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, feedback_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSummaryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, summary_);
+      }
+      if (!getFeedbackBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, feedback_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Health.feedback)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Health.feedback other = (com.SmartWatchgRPC.Health.feedback) obj;
+
+      boolean result = true;
+      result = result && getSummary()
+          .equals(other.getSummary());
+      result = result && getFeedback()
+          .equals(other.getFeedback());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSummary().hashCode();
+      hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getFeedback().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.feedback parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Health.feedback prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code feedback}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:feedback)
+        com.SmartWatchgRPC.Health.feedbackOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Health.internal_static_feedback_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Health.internal_static_feedback_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Health.feedback.class, com.SmartWatchgRPC.Health.feedback.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Health.feedback.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        summary_ = "";
+
+        feedback_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Health.internal_static_feedback_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.feedback getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Health.feedback.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.feedback build() {
+        com.SmartWatchgRPC.Health.feedback result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.feedback buildPartial() {
+        com.SmartWatchgRPC.Health.feedback result = new com.SmartWatchgRPC.Health.feedback(this);
+        result.summary_ = summary_;
+        result.feedback_ = feedback_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Health.feedback) {
+          return mergeFrom((com.SmartWatchgRPC.Health.feedback)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Health.feedback other) {
+        if (other == com.SmartWatchgRPC.Health.feedback.getDefaultInstance()) return this;
+        if (!other.getSummary().isEmpty()) {
+          summary_ = other.summary_;
+          onChanged();
+        }
+        if (!other.getFeedback().isEmpty()) {
+          feedback_ = other.feedback_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Health.feedback parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Health.feedback) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object summary_ = "";
+      /**
+       * <code>string summary = 1;</code>
+       */
+      public java.lang.String getSummary() {
+        java.lang.Object ref = summary_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          summary_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string summary = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSummaryBytes() {
+        java.lang.Object ref = summary_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          summary_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string summary = 1;</code>
+       */
+      public Builder setSummary(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        summary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string summary = 1;</code>
+       */
+      public Builder clearSummary() {
+        
+        summary_ = getDefaultInstance().getSummary();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string summary = 1;</code>
+       */
+      public Builder setSummaryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        summary_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object feedback_ = "";
+      /**
+       * <code>string feedback = 2;</code>
+       */
+      public java.lang.String getFeedback() {
+        java.lang.Object ref = feedback_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          feedback_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string feedback = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFeedbackBytes() {
+        java.lang.Object ref = feedback_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          feedback_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string feedback = 2;</code>
+       */
+      public Builder setFeedback(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        feedback_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feedback = 2;</code>
+       */
+      public Builder clearFeedback() {
+        
+        feedback_ = getDefaultInstance().getFeedback();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string feedback = 2;</code>
+       */
+      public Builder setFeedbackBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        feedback_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:feedback)
+    }
+
+    // @@protoc_insertion_point(class_scope:feedback)
+    private static final com.SmartWatchgRPC.Health.feedback DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Health.feedback();
+    }
+
+    public static com.SmartWatchgRPC.Health.feedback getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<feedback>
+        PARSER = new com.google.protobuf.AbstractParser<feedback>() {
+      @java.lang.Override
+      public feedback parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new feedback(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<feedback> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<feedback> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Health.feedback getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface locationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:location)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double longtitude = 1;</code>
+     */
+    double getLongtitude();
+
+    /**
+     * <code>double latitude = 2;</code>
+     */
+    double getLatitude();
+  }
+  /**
+   * Protobuf type {@code location}
+   */
+  public  static final class location extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:location)
+      locationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use location.newBuilder() to construct.
+    private location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private location() {
+      longtitude_ = 0D;
+      latitude_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private location(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              longtitude_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              latitude_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Health.internal_static_location_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Health.internal_static_location_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Health.location.class, com.SmartWatchgRPC.Health.location.Builder.class);
+    }
+
+    public static final int LONGTITUDE_FIELD_NUMBER = 1;
+    private double longtitude_;
+    /**
+     * <code>double longtitude = 1;</code>
+     */
+    public double getLongtitude() {
+      return longtitude_;
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 2;
+    private double latitude_;
+    /**
+     * <code>double latitude = 2;</code>
+     */
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (longtitude_ != 0D) {
+        output.writeDouble(1, longtitude_);
+      }
+      if (latitude_ != 0D) {
+        output.writeDouble(2, latitude_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (longtitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, longtitude_);
+      }
+      if (latitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, latitude_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Health.location)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Health.location other = (com.SmartWatchgRPC.Health.location) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLongtitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLongtitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLatitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLatitude()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LONGTITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLongtitude()));
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLatitude()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.location parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.location parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.location parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Health.location prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code location}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:location)
+        com.SmartWatchgRPC.Health.locationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Health.internal_static_location_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Health.internal_static_location_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Health.location.class, com.SmartWatchgRPC.Health.location.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Health.location.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        longtitude_ = 0D;
+
+        latitude_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Health.internal_static_location_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.location getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Health.location.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.location build() {
+        com.SmartWatchgRPC.Health.location result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.location buildPartial() {
+        com.SmartWatchgRPC.Health.location result = new com.SmartWatchgRPC.Health.location(this);
+        result.longtitude_ = longtitude_;
+        result.latitude_ = latitude_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Health.location) {
+          return mergeFrom((com.SmartWatchgRPC.Health.location)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Health.location other) {
+        if (other == com.SmartWatchgRPC.Health.location.getDefaultInstance()) return this;
+        if (other.getLongtitude() != 0D) {
+          setLongtitude(other.getLongtitude());
+        }
+        if (other.getLatitude() != 0D) {
+          setLatitude(other.getLatitude());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Health.location parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Health.location) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double longtitude_ ;
+      /**
+       * <code>double longtitude = 1;</code>
+       */
+      public double getLongtitude() {
+        return longtitude_;
+      }
+      /**
+       * <code>double longtitude = 1;</code>
+       */
+      public Builder setLongtitude(double value) {
+        
+        longtitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double longtitude = 1;</code>
+       */
+      public Builder clearLongtitude() {
+        
+        longtitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double latitude_ ;
+      /**
+       * <code>double latitude = 2;</code>
+       */
+      public double getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <code>double latitude = 2;</code>
+       */
+      public Builder setLatitude(double value) {
+        
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double latitude = 2;</code>
+       */
+      public Builder clearLatitude() {
+        
+        latitude_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:location)
+    }
+
+    // @@protoc_insertion_point(class_scope:location)
+    private static final com.SmartWatchgRPC.Health.location DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Health.location();
+    }
+
+    public static com.SmartWatchgRPC.Health.location getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<location>
+        PARSER = new com.google.protobuf.AbstractParser<location>() {
+      @java.lang.Override
+      public location parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new location(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<location> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<location> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Health.location getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface mapOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:map)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes image = 1;</code>
+     */
+    com.google.protobuf.ByteString getImage();
+  }
+  /**
+   * Protobuf type {@code map}
+   */
+  public  static final class map extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:map)
+      mapOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use map.newBuilder() to construct.
+    private map(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private map() {
+      image_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private map(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              image_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.SmartWatchgRPC.Health.internal_static_map_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.SmartWatchgRPC.Health.internal_static_map_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.SmartWatchgRPC.Health.map.class, com.SmartWatchgRPC.Health.map.Builder.class);
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString image_;
+    /**
+     * <code>bytes image = 1;</code>
+     */
+    public com.google.protobuf.ByteString getImage() {
+      return image_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!image_.isEmpty()) {
+        output.writeBytes(1, image_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!image_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, image_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.SmartWatchgRPC.Health.map)) {
+        return super.equals(obj);
+      }
+      com.SmartWatchgRPC.Health.map other = (com.SmartWatchgRPC.Health.map) obj;
+
+      boolean result = true;
+      result = result && getImage()
+          .equals(other.getImage());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.map parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.map parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.SmartWatchgRPC.Health.map parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.SmartWatchgRPC.Health.map prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code map}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:map)
+        com.SmartWatchgRPC.Health.mapOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.SmartWatchgRPC.Health.internal_static_map_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.SmartWatchgRPC.Health.internal_static_map_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.SmartWatchgRPC.Health.map.class, com.SmartWatchgRPC.Health.map.Builder.class);
+      }
+
+      // Construct using com.SmartWatchgRPC.Health.map.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        image_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.SmartWatchgRPC.Health.internal_static_map_descriptor;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.map getDefaultInstanceForType() {
+        return com.SmartWatchgRPC.Health.map.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.map build() {
+        com.SmartWatchgRPC.Health.map result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.SmartWatchgRPC.Health.map buildPartial() {
+        com.SmartWatchgRPC.Health.map result = new com.SmartWatchgRPC.Health.map(this);
+        result.image_ = image_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.SmartWatchgRPC.Health.map) {
+          return mergeFrom((com.SmartWatchgRPC.Health.map)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.SmartWatchgRPC.Health.map other) {
+        if (other == com.SmartWatchgRPC.Health.map.getDefaultInstance()) return this;
+        if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
+          setImage(other.getImage());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.SmartWatchgRPC.Health.map parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.SmartWatchgRPC.Health.map) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes image = 1;</code>
+       */
+      public com.google.protobuf.ByteString getImage() {
+        return image_;
+      }
+      /**
+       * <code>bytes image = 1;</code>
+       */
+      public Builder setImage(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        image_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes image = 1;</code>
+       */
+      public Builder clearImage() {
+        
+        image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:map)
+    }
+
+    // @@protoc_insertion_point(class_scope:map)
+    private static final com.SmartWatchgRPC.Health.map DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.SmartWatchgRPC.Health.map();
+    }
+
+    public static com.SmartWatchgRPC.Health.map getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<map>
+        PARSER = new com.google.protobuf.AbstractParser<map>() {
+      @java.lang.Override
+      public map parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new map(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<map> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<map> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.SmartWatchgRPC.Health.map getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_stats_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_stats_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_feedback_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_feedback_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_location_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_location_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_map_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_map_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -23,9 +2493,16 @@ public final class Health {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014health.proto2\020\n\016recordActivity2\017\n\rtrac" +
-      "kLocation2\017\n\rpairEquipmentB\024\n\022com.SmartW" +
-      "atchgRPCb\006proto3"
+      "\n\014health.proto\"O\n\005stats\022\024\n\014activityType\030" +
+      "\001 \001(\t\022\014\n\004time\030\002 \001(\005\022\020\n\010distance\030\003 \001(\005\022\020\n" +
+      "\010calories\030\004 \001(\005\"-\n\010feedback\022\017\n\007summary\030\001" +
+      " \001(\t\022\020\n\010feedback\030\002 \001(\t\"0\n\010location\022\022\n\nlo" +
+      "ngtitude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\"\024\n\003map\022" +
+      "\r\n\005image\030\001 \001(\0142y\n\006health\022#\n\016recordActivi" +
+      "ty\022\006.stats\032\t.feedback\022\"\n\rtrackLocation\022\t" +
+      ".location\032\004.map(\001\022&\n\rpairEquipment\022\006.sta" +
+      "ts\032\t.feedback(\0010\001B\024\n\022com.SmartWatchgRPCb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39,6 +2516,30 @@ public final class Health {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_stats_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_stats_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_stats_descriptor,
+        new java.lang.String[] { "ActivityType", "Time", "Distance", "Calories", });
+    internal_static_feedback_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_feedback_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_feedback_descriptor,
+        new java.lang.String[] { "Summary", "Feedback", });
+    internal_static_location_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_location_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_location_descriptor,
+        new java.lang.String[] { "Longtitude", "Latitude", });
+    internal_static_map_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_map_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_map_descriptor,
+        new java.lang.String[] { "Image", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

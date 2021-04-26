@@ -2,12 +2,44 @@ syntax = "proto3";
 
 option java_package = "com.SmartWatchgRPC";
 
-service getRestaurants{
+service restaurants{
+
+	rpc getRestaurants (location) returns (restaurant);
+	
+	rpc makeReservation(reservationDetails) returns (reservationConfirmation);
+	
+	rpc makeOrder(orderDetails) returns (orderConfirmation);
 }
 
-service makeReservation{
+message location {
+  double latitude = 1;
+  double longtitude = 2;
+  
+}
+message restaurant {
+  repeated string restaurantDetails = 1;
+  
 }
 
-service makeOrder{
+message reservationDetails {
+  string time = 1;
+  string restaurantName = 2;
+  int32 numberOfSeats = 3;
 }
 
+message reservationConfirmation {
+  bool confirmation = 1;
+  string reservationSummary = 2;  
+}
+
+message orderDetails {
+  bool confirmation = 1;
+  repeated string item = 2;  
+  string paymentDetails = 3;
+}
+
+message orderConfirmation {
+  bool confirmation = 1;
+  string orderSummary = 2; 
+  
+}

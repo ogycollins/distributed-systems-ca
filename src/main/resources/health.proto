@@ -2,12 +2,36 @@ syntax = "proto3";
 
 option java_package = "com.SmartWatchgRPC";
 
-service recordActivity{
+service health{
+
+	rpc recordActivity (stats) returns (feedback);
+	
+	rpc trackLocation (stream location) returns (map);
+	
+	rpc pairEquipment (stream stats) returns (stream feedback);
 }
 
-service trackLocation{
+message stats {
+	string activityType = 1;
+	int32 time = 2;
+	int32 distance = 3;
+	int32	calories = 4; 
 }
 
-service pairEquipment{
+message feedback {
+	string summary = 1;
+	string feedback = 2;
 }
+
+message location {
+	double longtitude = 1;
+	double latitude = 2;
+}
+
+message map {
+	bytes image = 1;
+}
+
+
+
 
