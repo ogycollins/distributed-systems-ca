@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.SmartWatchgRPC";
+
+service receiveMessages{
+}
+
+service sendMessage{
+}
+
+service searchMessages{
+}
+
