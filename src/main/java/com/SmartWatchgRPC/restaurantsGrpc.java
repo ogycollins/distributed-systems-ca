@@ -34,7 +34,7 @@ public final class restaurantsGrpc {
       fullMethodName = SERVICE_NAME + '/' + "getRestaurants",
       requestType = com.SmartWatchgRPC.Restaurants.location.class,
       responseType = com.SmartWatchgRPC.Restaurants.restaurant.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.location,
       com.SmartWatchgRPC.Restaurants.restaurant> getGetRestaurantsMethod() {
     io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.location, com.SmartWatchgRPC.Restaurants.restaurant> getGetRestaurantsMethod;
@@ -43,7 +43,7 @@ public final class restaurantsGrpc {
         if ((getGetRestaurantsMethod = restaurantsGrpc.getGetRestaurantsMethod) == null) {
           restaurantsGrpc.getGetRestaurantsMethod = getGetRestaurantsMethod = 
               io.grpc.MethodDescriptor.<com.SmartWatchgRPC.Restaurants.location, com.SmartWatchgRPC.Restaurants.restaurant>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "restaurants", "getRestaurants"))
               .setSampledToLocalTracing(true)
@@ -98,7 +98,7 @@ public final class restaurantsGrpc {
       fullMethodName = SERVICE_NAME + '/' + "makeOrder",
       requestType = com.SmartWatchgRPC.Restaurants.orderDetails.class,
       responseType = com.SmartWatchgRPC.Restaurants.orderConfirmation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.orderDetails,
       com.SmartWatchgRPC.Restaurants.orderConfirmation> getMakeOrderMethod() {
     io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.orderDetails, com.SmartWatchgRPC.Restaurants.orderConfirmation> getMakeOrderMethod;
@@ -107,7 +107,7 @@ public final class restaurantsGrpc {
         if ((getMakeOrderMethod = restaurantsGrpc.getMakeOrderMethod) == null) {
           restaurantsGrpc.getMakeOrderMethod = getMakeOrderMethod = 
               io.grpc.MethodDescriptor.<com.SmartWatchgRPC.Restaurants.orderDetails, com.SmartWatchgRPC.Restaurants.orderConfirmation>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "restaurants", "makeOrder"))
               .setSampledToLocalTracing(true)
@@ -175,7 +175,7 @@ public final class restaurantsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getGetRestaurantsMethod(),
-            asyncUnaryCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 com.SmartWatchgRPC.Restaurants.location,
                 com.SmartWatchgRPC.Restaurants.restaurant>(
@@ -189,7 +189,7 @@ public final class restaurantsGrpc {
                   this, METHODID_MAKE_RESERVATION)))
           .addMethod(
             getMakeOrderMethod(),
-            asyncUnaryCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 com.SmartWatchgRPC.Restaurants.orderDetails,
                 com.SmartWatchgRPC.Restaurants.orderConfirmation>(
@@ -220,7 +220,7 @@ public final class restaurantsGrpc {
      */
     public void getRestaurants(com.SmartWatchgRPC.Restaurants.location request,
         io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.restaurant> responseObserver) {
-      asyncUnaryCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getGetRestaurantsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -236,7 +236,7 @@ public final class restaurantsGrpc {
      */
     public void makeOrder(com.SmartWatchgRPC.Restaurants.orderDetails request,
         io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderConfirmation> responseObserver) {
-      asyncUnaryCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getMakeOrderMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -261,8 +261,9 @@ public final class restaurantsGrpc {
 
     /**
      */
-    public com.SmartWatchgRPC.Restaurants.restaurant getRestaurants(com.SmartWatchgRPC.Restaurants.location request) {
-      return blockingUnaryCall(
+    public java.util.Iterator<com.SmartWatchgRPC.Restaurants.restaurant> getRestaurants(
+        com.SmartWatchgRPC.Restaurants.location request) {
+      return blockingServerStreamingCall(
           getChannel(), getGetRestaurantsMethod(), getCallOptions(), request);
     }
 
@@ -275,8 +276,9 @@ public final class restaurantsGrpc {
 
     /**
      */
-    public com.SmartWatchgRPC.Restaurants.orderConfirmation makeOrder(com.SmartWatchgRPC.Restaurants.orderDetails request) {
-      return blockingUnaryCall(
+    public java.util.Iterator<com.SmartWatchgRPC.Restaurants.orderConfirmation> makeOrder(
+        com.SmartWatchgRPC.Restaurants.orderDetails request) {
+      return blockingServerStreamingCall(
           getChannel(), getMakeOrderMethod(), getCallOptions(), request);
     }
   }
@@ -301,26 +303,10 @@ public final class restaurantsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.SmartWatchgRPC.Restaurants.restaurant> getRestaurants(
-        com.SmartWatchgRPC.Restaurants.location request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetRestaurantsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.SmartWatchgRPC.Restaurants.reservationConfirmation> makeReservation(
         com.SmartWatchgRPC.Restaurants.reservationDetails request) {
       return futureUnaryCall(
           getChannel().newCall(getMakeReservationMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.SmartWatchgRPC.Restaurants.orderConfirmation> makeOrder(
-        com.SmartWatchgRPC.Restaurants.orderDetails request) {
-      return futureUnaryCall(
-          getChannel().newCall(getMakeOrderMethod(), getCallOptions()), request);
     }
   }
 

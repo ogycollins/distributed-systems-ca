@@ -564,23 +564,14 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string restaurantDetails = 1;</code>
+     * <code>string restaurantDetails = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getRestaurantDetailsList();
+    java.lang.String getRestaurantDetails();
     /**
-     * <code>repeated string restaurantDetails = 1;</code>
-     */
-    int getRestaurantDetailsCount();
-    /**
-     * <code>repeated string restaurantDetails = 1;</code>
-     */
-    java.lang.String getRestaurantDetails(int index);
-    /**
-     * <code>repeated string restaurantDetails = 1;</code>
+     * <code>string restaurantDetails = 1;</code>
      */
     com.google.protobuf.ByteString
-        getRestaurantDetailsBytes(int index);
+        getRestaurantDetailsBytes();
   }
   /**
    * Protobuf type {@code restaurant}
@@ -595,7 +586,7 @@ public final class Restaurants {
       super(builder);
     }
     private restaurant() {
-      restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      restaurantDetails_ = "";
     }
 
     @java.lang.Override
@@ -624,11 +615,8 @@ public final class Restaurants {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                restaurantDetails_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              restaurantDetails_.add(s);
+
+              restaurantDetails_ = s;
               break;
             }
             default: {
@@ -646,9 +634,6 @@ public final class Restaurants {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          restaurantDetails_ = restaurantDetails_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -667,32 +652,37 @@ public final class Restaurants {
     }
 
     public static final int RESTAURANTDETAILS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList restaurantDetails_;
+    private volatile java.lang.Object restaurantDetails_;
     /**
-     * <code>repeated string restaurantDetails = 1;</code>
+     * <code>string restaurantDetails = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getRestaurantDetailsList() {
-      return restaurantDetails_;
+    public java.lang.String getRestaurantDetails() {
+      java.lang.Object ref = restaurantDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        restaurantDetails_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string restaurantDetails = 1;</code>
-     */
-    public int getRestaurantDetailsCount() {
-      return restaurantDetails_.size();
-    }
-    /**
-     * <code>repeated string restaurantDetails = 1;</code>
-     */
-    public java.lang.String getRestaurantDetails(int index) {
-      return restaurantDetails_.get(index);
-    }
-    /**
-     * <code>repeated string restaurantDetails = 1;</code>
+     * <code>string restaurantDetails = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getRestaurantDetailsBytes(int index) {
-      return restaurantDetails_.getByteString(index);
+        getRestaurantDetailsBytes() {
+      java.lang.Object ref = restaurantDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        restaurantDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -709,8 +699,8 @@ public final class Restaurants {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < restaurantDetails_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restaurantDetails_.getRaw(i));
+      if (!getRestaurantDetailsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restaurantDetails_);
       }
       unknownFields.writeTo(output);
     }
@@ -721,13 +711,8 @@ public final class Restaurants {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < restaurantDetails_.size(); i++) {
-          dataSize += computeStringSizeNoTag(restaurantDetails_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getRestaurantDetailsList().size();
+      if (!getRestaurantDetailsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, restaurantDetails_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -745,8 +730,8 @@ public final class Restaurants {
       com.SmartWatchgRPC.Restaurants.restaurant other = (com.SmartWatchgRPC.Restaurants.restaurant) obj;
 
       boolean result = true;
-      result = result && getRestaurantDetailsList()
-          .equals(other.getRestaurantDetailsList());
+      result = result && getRestaurantDetails()
+          .equals(other.getRestaurantDetails());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -758,10 +743,8 @@ public final class Restaurants {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRestaurantDetailsCount() > 0) {
-        hash = (37 * hash) + RESTAURANTDETAILS_FIELD_NUMBER;
-        hash = (53 * hash) + getRestaurantDetailsList().hashCode();
-      }
+      hash = (37 * hash) + RESTAURANTDETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getRestaurantDetails().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -895,8 +878,8 @@ public final class Restaurants {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        restaurantDetails_ = "";
+
         return this;
       }
 
@@ -923,11 +906,6 @@ public final class Restaurants {
       @java.lang.Override
       public com.SmartWatchgRPC.Restaurants.restaurant buildPartial() {
         com.SmartWatchgRPC.Restaurants.restaurant result = new com.SmartWatchgRPC.Restaurants.restaurant(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          restaurantDetails_ = restaurantDetails_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
         result.restaurantDetails_ = restaurantDetails_;
         onBuilt();
         return result;
@@ -977,14 +955,8 @@ public final class Restaurants {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.restaurant other) {
         if (other == com.SmartWatchgRPC.Restaurants.restaurant.getDefaultInstance()) return this;
-        if (!other.restaurantDetails_.isEmpty()) {
-          if (restaurantDetails_.isEmpty()) {
-            restaurantDetails_ = other.restaurantDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureRestaurantDetailsIsMutable();
-            restaurantDetails_.addAll(other.restaurantDetails_);
-          }
+        if (!other.getRestaurantDetails().isEmpty()) {
+          restaurantDetails_ = other.restaurantDetails_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1015,98 +987,72 @@ public final class Restaurants {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureRestaurantDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          restaurantDetails_ = new com.google.protobuf.LazyStringArrayList(restaurantDetails_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object restaurantDetails_ = "";
       /**
-       * <code>repeated string restaurantDetails = 1;</code>
+       * <code>string restaurantDetails = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getRestaurantDetailsList() {
-        return restaurantDetails_.getUnmodifiableView();
+      public java.lang.String getRestaurantDetails() {
+        java.lang.Object ref = restaurantDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          restaurantDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string restaurantDetails = 1;</code>
-       */
-      public int getRestaurantDetailsCount() {
-        return restaurantDetails_.size();
-      }
-      /**
-       * <code>repeated string restaurantDetails = 1;</code>
-       */
-      public java.lang.String getRestaurantDetails(int index) {
-        return restaurantDetails_.get(index);
-      }
-      /**
-       * <code>repeated string restaurantDetails = 1;</code>
+       * <code>string restaurantDetails = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getRestaurantDetailsBytes(int index) {
-        return restaurantDetails_.getByteString(index);
+          getRestaurantDetailsBytes() {
+        java.lang.Object ref = restaurantDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          restaurantDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string restaurantDetails = 1;</code>
+       * <code>string restaurantDetails = 1;</code>
        */
       public Builder setRestaurantDetails(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRestaurantDetailsIsMutable();
-        restaurantDetails_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string restaurantDetails = 1;</code>
-       */
-      public Builder addRestaurantDetails(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureRestaurantDetailsIsMutable();
-        restaurantDetails_.add(value);
+  
+        restaurantDetails_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string restaurantDetails = 1;</code>
-       */
-      public Builder addAllRestaurantDetails(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureRestaurantDetailsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, restaurantDetails_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string restaurantDetails = 1;</code>
+       * <code>string restaurantDetails = 1;</code>
        */
       public Builder clearRestaurantDetails() {
-        restaurantDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        restaurantDetails_ = getDefaultInstance().getRestaurantDetails();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string restaurantDetails = 1;</code>
+       * <code>string restaurantDetails = 1;</code>
        */
-      public Builder addRestaurantDetailsBytes(
+      public Builder setRestaurantDetailsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureRestaurantDetailsIsMutable();
-        restaurantDetails_.add(value);
+        
+        restaurantDetails_ = value;
         onChanged();
         return this;
       }
@@ -2537,23 +2483,14 @@ public final class Restaurants {
     boolean getConfirmation();
 
     /**
-     * <code>repeated string item = 2;</code>
+     * <code>string item = 2;</code>
      */
-    java.util.List<java.lang.String>
-        getItemList();
+    java.lang.String getItem();
     /**
-     * <code>repeated string item = 2;</code>
-     */
-    int getItemCount();
-    /**
-     * <code>repeated string item = 2;</code>
-     */
-    java.lang.String getItem(int index);
-    /**
-     * <code>repeated string item = 2;</code>
+     * <code>string item = 2;</code>
      */
     com.google.protobuf.ByteString
-        getItemBytes(int index);
+        getItemBytes();
 
     /**
      * <code>string paymentDetails = 3;</code>
@@ -2579,7 +2516,7 @@ public final class Restaurants {
     }
     private orderDetails() {
       confirmation_ = false;
-      item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      item_ = "";
       paymentDetails_ = "";
     }
 
@@ -2614,11 +2551,8 @@ public final class Restaurants {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                item_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              item_.add(s);
+
+              item_ = s;
               break;
             }
             case 26: {
@@ -2642,9 +2576,6 @@ public final class Restaurants {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          item_ = item_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2662,7 +2593,6 @@ public final class Restaurants {
               com.SmartWatchgRPC.Restaurants.orderDetails.class, com.SmartWatchgRPC.Restaurants.orderDetails.Builder.class);
     }
 
-    private int bitField0_;
     public static final int CONFIRMATION_FIELD_NUMBER = 1;
     private boolean confirmation_;
     /**
@@ -2673,32 +2603,37 @@ public final class Restaurants {
     }
 
     public static final int ITEM_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList item_;
+    private volatile java.lang.Object item_;
     /**
-     * <code>repeated string item = 2;</code>
+     * <code>string item = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getItemList() {
-      return item_;
+    public java.lang.String getItem() {
+      java.lang.Object ref = item_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        item_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string item = 2;</code>
-     */
-    public int getItemCount() {
-      return item_.size();
-    }
-    /**
-     * <code>repeated string item = 2;</code>
-     */
-    public java.lang.String getItem(int index) {
-      return item_.get(index);
-    }
-    /**
-     * <code>repeated string item = 2;</code>
+     * <code>string item = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getItemBytes(int index) {
-      return item_.getByteString(index);
+        getItemBytes() {
+      java.lang.Object ref = item_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        item_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PAYMENTDETAILS_FIELD_NUMBER = 3;
@@ -2752,8 +2687,8 @@ public final class Restaurants {
       if (confirmation_ != false) {
         output.writeBool(1, confirmation_);
       }
-      for (int i = 0; i < item_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, item_.getRaw(i));
+      if (!getItemBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, item_);
       }
       if (!getPaymentDetailsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paymentDetails_);
@@ -2771,13 +2706,8 @@ public final class Restaurants {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, confirmation_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < item_.size(); i++) {
-          dataSize += computeStringSizeNoTag(item_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getItemList().size();
+      if (!getItemBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, item_);
       }
       if (!getPaymentDetailsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paymentDetails_);
@@ -2800,8 +2730,8 @@ public final class Restaurants {
       boolean result = true;
       result = result && (getConfirmation()
           == other.getConfirmation());
-      result = result && getItemList()
-          .equals(other.getItemList());
+      result = result && getItem()
+          .equals(other.getItem());
       result = result && getPaymentDetails()
           .equals(other.getPaymentDetails());
       result = result && unknownFields.equals(other.unknownFields);
@@ -2818,10 +2748,8 @@ public final class Restaurants {
       hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getConfirmation());
-      if (getItemCount() > 0) {
-        hash = (37 * hash) + ITEM_FIELD_NUMBER;
-        hash = (53 * hash) + getItemList().hashCode();
-      }
+      hash = (37 * hash) + ITEM_FIELD_NUMBER;
+      hash = (53 * hash) + getItem().hashCode();
       hash = (37 * hash) + PAYMENTDETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getPaymentDetails().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2959,8 +2887,8 @@ public final class Restaurants {
         super.clear();
         confirmation_ = false;
 
-        item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        item_ = "";
+
         paymentDetails_ = "";
 
         return this;
@@ -2989,16 +2917,9 @@ public final class Restaurants {
       @java.lang.Override
       public com.SmartWatchgRPC.Restaurants.orderDetails buildPartial() {
         com.SmartWatchgRPC.Restaurants.orderDetails result = new com.SmartWatchgRPC.Restaurants.orderDetails(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.confirmation_ = confirmation_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          item_ = item_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
         result.item_ = item_;
         result.paymentDetails_ = paymentDetails_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3050,14 +2971,8 @@ public final class Restaurants {
         if (other.getConfirmation() != false) {
           setConfirmation(other.getConfirmation());
         }
-        if (!other.item_.isEmpty()) {
-          if (item_.isEmpty()) {
-            item_ = other.item_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureItemIsMutable();
-            item_.addAll(other.item_);
-          }
+        if (!other.getItem().isEmpty()) {
+          item_ = other.item_;
           onChanged();
         }
         if (!other.getPaymentDetails().isEmpty()) {
@@ -3092,7 +3007,6 @@ public final class Restaurants {
         }
         return this;
       }
-      private int bitField0_;
 
       private boolean confirmation_ ;
       /**
@@ -3120,96 +3034,71 @@ public final class Restaurants {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureItemIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          item_ = new com.google.protobuf.LazyStringArrayList(item_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private java.lang.Object item_ = "";
       /**
-       * <code>repeated string item = 2;</code>
+       * <code>string item = 2;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getItemList() {
-        return item_.getUnmodifiableView();
+      public java.lang.String getItem() {
+        java.lang.Object ref = item_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          item_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string item = 2;</code>
-       */
-      public int getItemCount() {
-        return item_.size();
-      }
-      /**
-       * <code>repeated string item = 2;</code>
-       */
-      public java.lang.String getItem(int index) {
-        return item_.get(index);
-      }
-      /**
-       * <code>repeated string item = 2;</code>
+       * <code>string item = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getItemBytes(int index) {
-        return item_.getByteString(index);
+          getItemBytes() {
+        java.lang.Object ref = item_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          item_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string item = 2;</code>
+       * <code>string item = 2;</code>
        */
       public Builder setItem(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureItemIsMutable();
-        item_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string item = 2;</code>
-       */
-      public Builder addItem(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureItemIsMutable();
-        item_.add(value);
+  
+        item_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string item = 2;</code>
-       */
-      public Builder addAllItem(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureItemIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, item_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string item = 2;</code>
+       * <code>string item = 2;</code>
        */
       public Builder clearItem() {
-        item_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        item_ = getDefaultInstance().getItem();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string item = 2;</code>
+       * <code>string item = 2;</code>
        */
-      public Builder addItemBytes(
+      public Builder setItemBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureItemIsMutable();
-        item_.add(value);
+        
+        item_ = value;
         onChanged();
         return this;
       }
@@ -3990,20 +3879,20 @@ public final class Restaurants {
     java.lang.String[] descriptorData = {
       "\n\021restaurants.proto\"0\n\010location\022\020\n\010latit" +
       "ude\030\001 \001(\001\022\022\n\nlongtitude\030\002 \001(\001\"\'\n\nrestaur" +
-      "ant\022\031\n\021restaurantDetails\030\001 \003(\t\"Q\n\022reserv" +
+      "ant\022\031\n\021restaurantDetails\030\001 \001(\t\"Q\n\022reserv" +
       "ationDetails\022\014\n\004time\030\001 \001(\t\022\026\n\016restaurant" +
       "Name\030\002 \001(\t\022\025\n\rnumberOfSeats\030\003 \001(\005\"K\n\027res" +
       "ervationConfirmation\022\024\n\014confirmation\030\001 \001" +
       "(\010\022\032\n\022reservationSummary\030\002 \001(\t\"J\n\014orderD" +
-      "etails\022\024\n\014confirmation\030\001 \001(\010\022\014\n\004item\030\002 \003" +
+      "etails\022\024\n\014confirmation\030\001 \001(\010\022\014\n\004item\030\002 \001" +
       "(\t\022\026\n\016paymentDetails\030\003 \001(\t\"?\n\021orderConfi" +
       "rmation\022\024\n\014confirmation\030\001 \001(\010\022\024\n\014orderSu" +
-      "mmary\030\002 \001(\t2\251\001\n\013restaurants\022(\n\016getRestau" +
-      "rants\022\t.location\032\013.restaurant\022@\n\017makeRes" +
-      "ervation\022\023.reservationDetails\032\030.reservat" +
-      "ionConfirmation\022.\n\tmakeOrder\022\r.orderDeta" +
-      "ils\032\022.orderConfirmationB\024\n\022com.SmartWatc" +
-      "hgRPCb\006proto3"
+      "mmary\030\002 \001(\t2\255\001\n\013restaurants\022*\n\016getRestau" +
+      "rants\022\t.location\032\013.restaurant0\001\022@\n\017makeR" +
+      "eservation\022\023.reservationDetails\032\030.reserv" +
+      "ationConfirmation\0220\n\tmakeOrder\022\r.orderDe" +
+      "tails\032\022.orderConfirmation0\001B\024\n\022com.Smart" +
+      "WatchgRPCb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
