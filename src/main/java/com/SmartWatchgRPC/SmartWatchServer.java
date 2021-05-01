@@ -11,6 +11,7 @@ public class SmartWatchServer {
 		Server server = ServerBuilder.forPort(9090)
 				.addService(new RestaurantsService())
 				.addService(new HealthService())
+				.addService(new MessagingService())
 				.build();
 		server.start();
 		

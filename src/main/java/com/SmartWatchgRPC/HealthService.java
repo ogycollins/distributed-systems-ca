@@ -12,6 +12,7 @@ import com.SmartWatchgRPC.Restaurants.orderDetails;
 import com.SmartWatchgRPC.RestaurantsService.Order;
 import com.SmartWatchgRPC.healthGrpc.healthImplBase;
 
+
 import io.grpc.stub.StreamObserver;
 
 public class HealthService extends healthImplBase {
@@ -67,11 +68,45 @@ public class HealthService extends healthImplBase {
 				}
 			};
 	}
-
+	
+	// send details of stats completed so far. return running totals and feedback. (bidirectional streaming)
 	@Override
 	public StreamObserver<stats> pairEquipment(StreamObserver<feedback> responseObserver) {
-		// TODO Auto-generated method stub
-		return super.pairEquipment(responseObserver);
+		
+		return new StreamObserver<stats> () {
+			double time; 
+			double distance; 
+			int calories; 
+			
+			@Override
+			public void onNext(stats msg) {
+				String activityType = msg.getActivityType();
+				time = time + msg.getTime();
+				distance = distance + msg.getDistance();
+				calories = calories + msg.getCalories();
+				
+				String summary = "Activity Type: " + activityType + ". Total Time: " + time + ". Total Distance:" + distance + ". Total Calories Burned: " + calories + ". ";
+							
+				feedback.Builder reply = feedback.newBuilder();
+				reply.setSummary(summary);	
+				reply.setFeedback("Making great progress. Keep it up!");
+				responseObserver.onNext(reply.build());
+				
+			}
+
+			@Override
+			public void onError(Throwable t) {
+				
+				t.printStackTrace();
+				
+			}
+
+			@Override
+			public void onCompleted() {				
+				responseObserver.onCompleted();
+			}
+			
+		};
 	}
 
 }

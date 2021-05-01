@@ -95,21 +95,21 @@ public final class MessagingGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.SmartWatchgRPC.MessagingOuterClass.searchKey,
-      com.SmartWatchgRPC.MessagingOuterClass.Message> getSearchMessagesMethod;
+      com.SmartWatchgRPC.MessagingOuterClass.searchResults> getSearchMessagesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "searchMessages",
       requestType = com.SmartWatchgRPC.MessagingOuterClass.searchKey.class,
-      responseType = com.SmartWatchgRPC.MessagingOuterClass.Message.class,
+      responseType = com.SmartWatchgRPC.MessagingOuterClass.searchResults.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.SmartWatchgRPC.MessagingOuterClass.searchKey,
-      com.SmartWatchgRPC.MessagingOuterClass.Message> getSearchMessagesMethod() {
-    io.grpc.MethodDescriptor<com.SmartWatchgRPC.MessagingOuterClass.searchKey, com.SmartWatchgRPC.MessagingOuterClass.Message> getSearchMessagesMethod;
+      com.SmartWatchgRPC.MessagingOuterClass.searchResults> getSearchMessagesMethod() {
+    io.grpc.MethodDescriptor<com.SmartWatchgRPC.MessagingOuterClass.searchKey, com.SmartWatchgRPC.MessagingOuterClass.searchResults> getSearchMessagesMethod;
     if ((getSearchMessagesMethod = MessagingGrpc.getSearchMessagesMethod) == null) {
       synchronized (MessagingGrpc.class) {
         if ((getSearchMessagesMethod = MessagingGrpc.getSearchMessagesMethod) == null) {
           MessagingGrpc.getSearchMessagesMethod = getSearchMessagesMethod = 
-              io.grpc.MethodDescriptor.<com.SmartWatchgRPC.MessagingOuterClass.searchKey, com.SmartWatchgRPC.MessagingOuterClass.Message>newBuilder()
+              io.grpc.MethodDescriptor.<com.SmartWatchgRPC.MessagingOuterClass.searchKey, com.SmartWatchgRPC.MessagingOuterClass.searchResults>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "Messaging", "searchMessages"))
@@ -117,7 +117,7 @@ public final class MessagingGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.SmartWatchgRPC.MessagingOuterClass.searchKey.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.SmartWatchgRPC.MessagingOuterClass.Message.getDefaultInstance()))
+                  com.SmartWatchgRPC.MessagingOuterClass.searchResults.getDefaultInstance()))
                   .setSchemaDescriptor(new MessagingMethodDescriptorSupplier("searchMessages"))
                   .build();
           }
@@ -182,7 +182,7 @@ public final class MessagingGrpc {
      * </pre>
      */
     public void searchMessages(com.SmartWatchgRPC.MessagingOuterClass.searchKey request,
-        io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.Message> responseObserver) {
+        io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.searchResults> responseObserver) {
       asyncUnimplementedUnaryCall(getSearchMessagesMethod(), responseObserver);
     }
 
@@ -207,7 +207,7 @@ public final class MessagingGrpc {
             asyncServerStreamingCall(
               new MethodHandlers<
                 com.SmartWatchgRPC.MessagingOuterClass.searchKey,
-                com.SmartWatchgRPC.MessagingOuterClass.Message>(
+                com.SmartWatchgRPC.MessagingOuterClass.searchResults>(
                   this, METHODID_SEARCH_MESSAGES)))
           .build();
     }
@@ -262,7 +262,7 @@ public final class MessagingGrpc {
      * </pre>
      */
     public void searchMessages(com.SmartWatchgRPC.MessagingOuterClass.searchKey request,
-        io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.Message> responseObserver) {
+        io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.searchResults> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getSearchMessagesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -315,7 +315,7 @@ public final class MessagingGrpc {
      * rpc to search old messages with a string
      * </pre>
      */
-    public java.util.Iterator<com.SmartWatchgRPC.MessagingOuterClass.Message> searchMessages(
+    public java.util.Iterator<com.SmartWatchgRPC.MessagingOuterClass.searchResults> searchMessages(
         com.SmartWatchgRPC.MessagingOuterClass.searchKey request) {
       return blockingServerStreamingCall(
           getChannel(), getSearchMessagesMethod(), getCallOptions(), request);
@@ -386,7 +386,7 @@ public final class MessagingGrpc {
           break;
         case METHODID_SEARCH_MESSAGES:
           serviceImpl.searchMessages((com.SmartWatchgRPC.MessagingOuterClass.searchKey) request,
-              (io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.Message>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.SmartWatchgRPC.MessagingOuterClass.searchResults>) responseObserver);
           break;
         default:
           throw new AssertionError();

@@ -12,7 +12,7 @@ service Messaging{
 	rpc sendMessage(Message) returns (messageConfirmation);
 	
 	// rpc to search old messages with a string
-	rpc searchMessages(searchKey) returns (stream Message);
+	rpc searchMessages(searchKey) returns (stream searchResults);
 }
 
 message Message {
@@ -34,7 +34,8 @@ message searchKey {
 }
 
 message searchResults {
-  repeated string messages = 1;
+  int32 numberOfMessages = 1;
+  string messages = 2;
 
 }
 

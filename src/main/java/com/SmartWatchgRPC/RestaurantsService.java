@@ -172,7 +172,7 @@ public class RestaurantsService extends restaurantsImplBase {
 	public class Order {
 		private List<String> orderItems = new ArrayList<String>();
 		private String paymentDetails;
-		
+
 		public void addToOrder(String item) {
 			orderItems.add(item);
 		}
