@@ -29,7 +29,7 @@ public class HealthService extends healthImplBase {
 
 		feedback.Builder response = feedback.newBuilder();
 		response.setSummary("Activity type: " + activityType + ". Time taken: " + time + " seconds. Distance: " + distance + "km. Calories Burned: " + calories + "cals.");
-		response.setFeedback("Activity recorded to your account. You're making great progress, keep it up!");
+		response.setFeedback("Activity recorded to your account. You are making great progress, keep it up!");
 		responseObserver.onNext(response.build());
 		responseObserver.onCompleted();
 		System.out.println("Feedback sent. ");

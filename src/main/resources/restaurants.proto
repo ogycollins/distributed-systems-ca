@@ -4,11 +4,11 @@ option java_package = "com.SmartWatchgRPC";
 
 service restaurants{
 
-	rpc getRestaurants (location) returns (stream restaurant);
+	rpc getRestaurants (location) returns (stream restaurant) {}
 	
-	rpc makeReservation(reservationDetails) returns (reservationConfirmation);
+	rpc makeReservation(reservationDetails) returns (reservationConfirmation) {}
 	
-	rpc makeOrder(stream orderDetails) returns (orderConfirmation);
+	rpc makeOrder(stream orderDetails) returns (orderConfirmation) {}
 }
 
 message location {
@@ -29,12 +29,12 @@ message reservationDetails {
 }
 
 message reservationConfirmation {
-  string reservationSummary = 2;  
+  string reservationSummary = 1;  
 }
 
 message orderDetails {
-  string item = 2;  
-  string paymentDetails = 3;
+  string item = 1;  
+  string paymentDetails = 2;
 }
 
 message orderConfirmation {

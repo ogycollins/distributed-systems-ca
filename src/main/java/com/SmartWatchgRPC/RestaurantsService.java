@@ -75,8 +75,11 @@ public class RestaurantsService extends restaurantsImplBase {
 
 				@Override
 				public void onNext(orderDetails request) {
+					System.out.println("Received item " + request.getItem());
 					myOrder.addToOrder(request.getItem());	
 					myOrder.setPaymentDetails(request.getPaymentDetails());
+					
+		
 				}
 
 				@Override
@@ -86,13 +89,14 @@ public class RestaurantsService extends restaurantsImplBase {
 				}
 
 				@Override
-				public void onCompleted() {					
-					orderConfirmation.Builder response = orderConfirmation.newBuilder();
-					response.setOrderSummary(myOrder.getItemList().toString());
-					response.setTotalCost("€20.50");
-					responseObserver.onNext(response.build());	
+				public void onCompleted() {	
+					orderConfirmation reply = orderConfirmation.newBuilder().setOrderSummary(myOrder.getItemList().toString()).setTotalCost("€20.50").build();
+//					orderConfirmation.Builder response = orderConfirmation.newBuilder();
+//					response.setOrderSummary(myOrder.getItemList().toString());
+//					response.setTotalCost("€20.50");
+					responseObserver.onNext(reply);	
 					responseObserver.onCompleted();		
-					System.out.println("Order details confirmed.");
+					System.out.println("Order details confirmed." + myOrder.getItemList().toString());
 				}
 			};
 	}

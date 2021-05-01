@@ -1864,11 +1864,11 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string reservationSummary = 2;</code>
+     * <code>string reservationSummary = 1;</code>
      */
     java.lang.String getReservationSummary();
     /**
-     * <code>string reservationSummary = 2;</code>
+     * <code>string reservationSummary = 1;</code>
      */
     com.google.protobuf.ByteString
         getReservationSummaryBytes();
@@ -1913,7 +1913,7 @@ public final class Restaurants {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               reservationSummary_ = s;
@@ -1951,10 +1951,10 @@ public final class Restaurants {
               com.SmartWatchgRPC.Restaurants.reservationConfirmation.class, com.SmartWatchgRPC.Restaurants.reservationConfirmation.Builder.class);
     }
 
-    public static final int RESERVATIONSUMMARY_FIELD_NUMBER = 2;
+    public static final int RESERVATIONSUMMARY_FIELD_NUMBER = 1;
     private volatile java.lang.Object reservationSummary_;
     /**
-     * <code>string reservationSummary = 2;</code>
+     * <code>string reservationSummary = 1;</code>
      */
     public java.lang.String getReservationSummary() {
       java.lang.Object ref = reservationSummary_;
@@ -1969,7 +1969,7 @@ public final class Restaurants {
       }
     }
     /**
-     * <code>string reservationSummary = 2;</code>
+     * <code>string reservationSummary = 1;</code>
      */
     public com.google.protobuf.ByteString
         getReservationSummaryBytes() {
@@ -2000,7 +2000,7 @@ public final class Restaurants {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getReservationSummaryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reservationSummary_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reservationSummary_);
       }
       unknownFields.writeTo(output);
     }
@@ -2012,7 +2012,7 @@ public final class Restaurants {
 
       size = 0;
       if (!getReservationSummaryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reservationSummary_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reservationSummary_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2290,7 +2290,7 @@ public final class Restaurants {
 
       private java.lang.Object reservationSummary_ = "";
       /**
-       * <code>string reservationSummary = 2;</code>
+       * <code>string reservationSummary = 1;</code>
        */
       public java.lang.String getReservationSummary() {
         java.lang.Object ref = reservationSummary_;
@@ -2305,7 +2305,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string reservationSummary = 2;</code>
+       * <code>string reservationSummary = 1;</code>
        */
       public com.google.protobuf.ByteString
           getReservationSummaryBytes() {
@@ -2321,7 +2321,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string reservationSummary = 2;</code>
+       * <code>string reservationSummary = 1;</code>
        */
       public Builder setReservationSummary(
           java.lang.String value) {
@@ -2334,7 +2334,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string reservationSummary = 2;</code>
+       * <code>string reservationSummary = 1;</code>
        */
       public Builder clearReservationSummary() {
         
@@ -2343,7 +2343,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string reservationSummary = 2;</code>
+       * <code>string reservationSummary = 1;</code>
        */
       public Builder setReservationSummaryBytes(
           com.google.protobuf.ByteString value) {
@@ -2414,21 +2414,21 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string item = 2;</code>
+     * <code>string item = 1;</code>
      */
     java.lang.String getItem();
     /**
-     * <code>string item = 2;</code>
+     * <code>string item = 1;</code>
      */
     com.google.protobuf.ByteString
         getItemBytes();
 
     /**
-     * <code>string paymentDetails = 3;</code>
+     * <code>string paymentDetails = 2;</code>
      */
     java.lang.String getPaymentDetails();
     /**
-     * <code>string paymentDetails = 3;</code>
+     * <code>string paymentDetails = 2;</code>
      */
     com.google.protobuf.ByteString
         getPaymentDetailsBytes();
@@ -2474,13 +2474,13 @@ public final class Restaurants {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               item_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               paymentDetails_ = s;
@@ -2518,10 +2518,10 @@ public final class Restaurants {
               com.SmartWatchgRPC.Restaurants.orderDetails.class, com.SmartWatchgRPC.Restaurants.orderDetails.Builder.class);
     }
 
-    public static final int ITEM_FIELD_NUMBER = 2;
+    public static final int ITEM_FIELD_NUMBER = 1;
     private volatile java.lang.Object item_;
     /**
-     * <code>string item = 2;</code>
+     * <code>string item = 1;</code>
      */
     public java.lang.String getItem() {
       java.lang.Object ref = item_;
@@ -2536,7 +2536,7 @@ public final class Restaurants {
       }
     }
     /**
-     * <code>string item = 2;</code>
+     * <code>string item = 1;</code>
      */
     public com.google.protobuf.ByteString
         getItemBytes() {
@@ -2552,10 +2552,10 @@ public final class Restaurants {
       }
     }
 
-    public static final int PAYMENTDETAILS_FIELD_NUMBER = 3;
+    public static final int PAYMENTDETAILS_FIELD_NUMBER = 2;
     private volatile java.lang.Object paymentDetails_;
     /**
-     * <code>string paymentDetails = 3;</code>
+     * <code>string paymentDetails = 2;</code>
      */
     public java.lang.String getPaymentDetails() {
       java.lang.Object ref = paymentDetails_;
@@ -2570,7 +2570,7 @@ public final class Restaurants {
       }
     }
     /**
-     * <code>string paymentDetails = 3;</code>
+     * <code>string paymentDetails = 2;</code>
      */
     public com.google.protobuf.ByteString
         getPaymentDetailsBytes() {
@@ -2601,10 +2601,10 @@ public final class Restaurants {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getItemBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, item_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, item_);
       }
       if (!getPaymentDetailsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paymentDetails_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, paymentDetails_);
       }
       unknownFields.writeTo(output);
     }
@@ -2616,10 +2616,10 @@ public final class Restaurants {
 
       size = 0;
       if (!getItemBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, item_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, item_);
       }
       if (!getPaymentDetailsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paymentDetails_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, paymentDetails_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2908,7 +2908,7 @@ public final class Restaurants {
 
       private java.lang.Object item_ = "";
       /**
-       * <code>string item = 2;</code>
+       * <code>string item = 1;</code>
        */
       public java.lang.String getItem() {
         java.lang.Object ref = item_;
@@ -2923,7 +2923,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string item = 2;</code>
+       * <code>string item = 1;</code>
        */
       public com.google.protobuf.ByteString
           getItemBytes() {
@@ -2939,7 +2939,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string item = 2;</code>
+       * <code>string item = 1;</code>
        */
       public Builder setItem(
           java.lang.String value) {
@@ -2952,7 +2952,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string item = 2;</code>
+       * <code>string item = 1;</code>
        */
       public Builder clearItem() {
         
@@ -2961,7 +2961,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string item = 2;</code>
+       * <code>string item = 1;</code>
        */
       public Builder setItemBytes(
           com.google.protobuf.ByteString value) {
@@ -2977,7 +2977,7 @@ public final class Restaurants {
 
       private java.lang.Object paymentDetails_ = "";
       /**
-       * <code>string paymentDetails = 3;</code>
+       * <code>string paymentDetails = 2;</code>
        */
       public java.lang.String getPaymentDetails() {
         java.lang.Object ref = paymentDetails_;
@@ -2992,7 +2992,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string paymentDetails = 3;</code>
+       * <code>string paymentDetails = 2;</code>
        */
       public com.google.protobuf.ByteString
           getPaymentDetailsBytes() {
@@ -3008,7 +3008,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string paymentDetails = 3;</code>
+       * <code>string paymentDetails = 2;</code>
        */
       public Builder setPaymentDetails(
           java.lang.String value) {
@@ -3021,7 +3021,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string paymentDetails = 3;</code>
+       * <code>string paymentDetails = 2;</code>
        */
       public Builder clearPaymentDetails() {
         
@@ -3030,7 +3030,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string paymentDetails = 3;</code>
+       * <code>string paymentDetails = 2;</code>
        */
       public Builder setPaymentDetailsBytes(
           com.google.protobuf.ByteString value) {
@@ -3828,15 +3828,15 @@ public final class Restaurants {
       "ationDetails\022\014\n\004time\030\001 \001(\t\022\026\n\016restaurant" +
       "Name\030\002 \001(\t\022\025\n\rnumberOfSeats\030\003 \001(\005\"5\n\027res" +
       "ervationConfirmation\022\032\n\022reservationSumma" +
-      "ry\030\002 \001(\t\"4\n\014orderDetails\022\014\n\004item\030\002 \001(\t\022\026" +
-      "\n\016paymentDetails\030\003 \001(\t\"<\n\021orderConfirmat" +
+      "ry\030\001 \001(\t\"4\n\014orderDetails\022\014\n\004item\030\001 \001(\t\022\026" +
+      "\n\016paymentDetails\030\002 \001(\t\"<\n\021orderConfirmat" +
       "ion\022\024\n\014orderSummary\030\001 \001(\t\022\021\n\ttotalCost\030\002" +
-      " \001(\t2\255\001\n\013restaurants\022*\n\016getRestaurants\022\t" +
-      ".location\032\013.restaurant0\001\022@\n\017makeReservat" +
-      "ion\022\023.reservationDetails\032\030.reservationCo" +
-      "nfirmation\0220\n\tmakeOrder\022\r.orderDetails\032\022" +
-      ".orderConfirmation(\001B\024\n\022com.SmartWatchgR" +
-      "PCb\006proto3"
+      " \001(\t2\263\001\n\013restaurants\022,\n\016getRestaurants\022\t" +
+      ".location\032\013.restaurant\"\0000\001\022B\n\017makeReserv" +
+      "ation\022\023.reservationDetails\032\030.reservation" +
+      "Confirmation\"\000\0222\n\tmakeOrder\022\r.orderDetai" +
+      "ls\032\022.orderConfirmation\"\000(\001B\024\n\022com.SmartW" +
+      "atchgRPCb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
