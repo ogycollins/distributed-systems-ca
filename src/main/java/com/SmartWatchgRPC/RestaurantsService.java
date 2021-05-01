@@ -1,9 +1,12 @@
 package com.SmartWatchgRPC;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.SmartWatchgRPC.Restaurants.location;
 import com.SmartWatchgRPC.Restaurants.orderConfirmation;
+import com.SmartWatchgRPC.Restaurants.orderConfirmation.Builder;
 import com.SmartWatchgRPC.Restaurants.orderDetails;
 import com.SmartWatchgRPC.Restaurants.reservationConfirmation;
 import com.SmartWatchgRPC.Restaurants.reservationDetails;
@@ -14,6 +17,7 @@ import io.grpc.stub.StreamObserver;
 
 public class RestaurantsService extends restaurantsImplBase {
 
+	// get list of restaurants based on location (server streaming)
 	@Override
 	public void getRestaurants(location request, StreamObserver<restaurant> responseObserver) {
 		double latitude = request.getLatitude();
@@ -21,7 +25,8 @@ public class RestaurantsService extends restaurantsImplBase {
 		RestaurantDatabase restaurantDatabase = new RestaurantDatabase();
 		Restaurant[] restaurantList =  restaurantDatabase.getRestaurantList();
 		restaurant.Builder response = restaurant.newBuilder();		
-
+		
+		System.out.println("Location received. Returning list of restaurants.");
 		for (int i = 0; i < 5; i++)
 		{
 			double distance = calcDistance(latitude, restaurantList[i].getLat(), longtitude, restaurantList[i].getLong());
@@ -40,24 +45,60 @@ public class RestaurantsService extends restaurantsImplBase {
 		}
 		
 		responseObserver.onCompleted();
+		System.out.println("Response complete.");
 	}
 
+	// make a reservation at a restaurant (unary)
 	@Override
 	public void makeReservation(reservationDetails request, StreamObserver<reservationConfirmation> responseObserver) {
 		String time = request.getTime();
 		String restaurantName = request.getRestaurantName();
 		int numberOfSeats = request.getNumberOfSeats();
+		System.out.println("Reservation request received.");
+		String reservationConfirmed = "Reservation confirmed at " + time + " at " + restaurantName + " for " + numberOfSeats + " people.";
+		reservationConfirmation.Builder response = reservationConfirmation.newBuilder();
+		
+		response.setReservationSummary(reservationConfirmed);
+		responseObserver.onNext(response.build());
+		responseObserver.onCompleted();
+		System.out.println("Response returned. ");
+
+		
 	}
 
-	@Override
-	public void makeOrder(orderDetails request, StreamObserver<orderConfirmation> responseObserver) {
-		boolean confirmation = request.getConfirmation();
-		String item = request.getItem();
-		String paymentDetails = request.getPaymentDetails();
+	// make an order with a restaurant (client streaming)
+	public StreamObserver<orderDetails> makeOrder (StreamObserver<orderConfirmation> responseObserver) {
+		System.out.println("Receiving order details.");
+		return new StreamObserver<orderDetails>()
+			{
+				Order myOrder = new Order();
+
+				@Override
+				public void onNext(orderDetails request) {
+					myOrder.addToOrder(request.getItem());	
+					myOrder.setPaymentDetails(request.getPaymentDetails());
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onCompleted() {					
+					orderConfirmation.Builder response = orderConfirmation.newBuilder();
+					response.setOrderSummary(myOrder.getItemList().toString());
+					response.setTotalCost("€20.50");
+					responseObserver.onNext(response.build());	
+					responseObserver.onCompleted();		
+					System.out.println("Order details confirmed.");
+				}
+			};
 	}
 	
 	 
-	
+	// method to calculate distance based on latitude and longitude. Used by getRestaurants method
 	public double calcDistance(double lat1, double lat2, double lon1, double lon2)
     {
  
@@ -83,10 +124,11 @@ public class RestaurantsService extends restaurantsImplBase {
         return(c * earthRadius);
     }
 	
+	// restaurant class used by getRestaurants method
 	public class Restaurant {
-		String name;
-		double latitude;
-		double longtitude;
+		private String name;
+		private double latitude;
+		private double longtitude;
 		
 		Restaurant (String name, double latitude, double longtitude)
 		{
@@ -110,6 +152,7 @@ public class RestaurantsService extends restaurantsImplBase {
 		
 	}
 	
+	// database of restaurants used by getRestaurants method
 	public class RestaurantDatabase {
 		Restaurant mcDonalds = new Restaurant("McDonalds", 53.71301477320824, -6.353288215127338);
 		Restaurant abraKebabra = new Restaurant("AbraKebabra", 53.71410396892777, -6.345464342112054);
@@ -123,5 +166,28 @@ public class RestaurantsService extends restaurantsImplBase {
 		{
 			return this.restaurantList;
 		}
+	}
+	
+	// order class used by makeOrder class
+	public class Order {
+		private List<String> orderItems = new ArrayList<String>();
+		private String paymentDetails;
+		
+		public void addToOrder(String item) {
+			orderItems.add(item);
+		}
+		
+		public void setPaymentDetails(String payment) {
+			paymentDetails = payment;
+		}
+		
+		public List<String> getItemList() {
+			return orderItems;
+		}
+		
+		public String getPaymentDetails() {
+			return paymentDetails;
+		}
+
 	}
 }

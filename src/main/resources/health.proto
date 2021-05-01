@@ -13,9 +13,9 @@ service health{
 
 message stats {
 	string activityType = 1;
-	int32 time = 2;
-	int32 distance = 3;
-	int32	calories = 4; 
+	double time = 2;
+	double distance = 3;
+	int32 calories = 4; 
 }
 
 message feedback {
@@ -24,12 +24,12 @@ message feedback {
 }
 
 message location {
-	double longtitude = 1;
+	double longitude = 1;
 	double latitude = 2;
 }
 
 message map {
-	bytes image = 1;
+	string image = 1;
 }
 
 

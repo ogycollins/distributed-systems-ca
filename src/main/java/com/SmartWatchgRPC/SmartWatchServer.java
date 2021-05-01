@@ -8,8 +8,10 @@ import io.grpc.ServerBuilder;
 public class SmartWatchServer {
 	public static void main(String[] args) throws InterruptedException, IOException
 	{
-		Server server = ServerBuilder.forPort(9090).addService(new RestaurantsService()).build();
-		
+		Server server = ServerBuilder.forPort(9090)
+				.addService(new RestaurantsService())
+				.addService(new HealthService())
+				.build();
 		server.start();
 		
 		System.out.println("Server started at " + server.getPort());

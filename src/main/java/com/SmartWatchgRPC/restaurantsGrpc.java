@@ -98,7 +98,7 @@ public final class restaurantsGrpc {
       fullMethodName = SERVICE_NAME + '/' + "makeOrder",
       requestType = com.SmartWatchgRPC.Restaurants.orderDetails.class,
       responseType = com.SmartWatchgRPC.Restaurants.orderConfirmation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.orderDetails,
       com.SmartWatchgRPC.Restaurants.orderConfirmation> getMakeOrderMethod() {
     io.grpc.MethodDescriptor<com.SmartWatchgRPC.Restaurants.orderDetails, com.SmartWatchgRPC.Restaurants.orderConfirmation> getMakeOrderMethod;
@@ -107,7 +107,7 @@ public final class restaurantsGrpc {
         if ((getMakeOrderMethod = restaurantsGrpc.getMakeOrderMethod) == null) {
           restaurantsGrpc.getMakeOrderMethod = getMakeOrderMethod = 
               io.grpc.MethodDescriptor.<com.SmartWatchgRPC.Restaurants.orderDetails, com.SmartWatchgRPC.Restaurants.orderConfirmation>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "restaurants", "makeOrder"))
               .setSampledToLocalTracing(true)
@@ -166,9 +166,9 @@ public final class restaurantsGrpc {
 
     /**
      */
-    public void makeOrder(com.SmartWatchgRPC.Restaurants.orderDetails request,
+    public io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderDetails> makeOrder(
         io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderConfirmation> responseObserver) {
-      asyncUnimplementedUnaryCall(getMakeOrderMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getMakeOrderMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -189,7 +189,7 @@ public final class restaurantsGrpc {
                   this, METHODID_MAKE_RESERVATION)))
           .addMethod(
             getMakeOrderMethod(),
-            asyncServerStreamingCall(
+            asyncClientStreamingCall(
               new MethodHandlers<
                 com.SmartWatchgRPC.Restaurants.orderDetails,
                 com.SmartWatchgRPC.Restaurants.orderConfirmation>(
@@ -234,10 +234,10 @@ public final class restaurantsGrpc {
 
     /**
      */
-    public void makeOrder(com.SmartWatchgRPC.Restaurants.orderDetails request,
+    public io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderDetails> makeOrder(
         io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderConfirmation> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(getMakeOrderMethod(), getCallOptions()), request, responseObserver);
+      return asyncClientStreamingCall(
+          getChannel().newCall(getMakeOrderMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -272,14 +272,6 @@ public final class restaurantsGrpc {
     public com.SmartWatchgRPC.Restaurants.reservationConfirmation makeReservation(com.SmartWatchgRPC.Restaurants.reservationDetails request) {
       return blockingUnaryCall(
           getChannel(), getMakeReservationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public java.util.Iterator<com.SmartWatchgRPC.Restaurants.orderConfirmation> makeOrder(
-        com.SmartWatchgRPC.Restaurants.orderDetails request) {
-      return blockingServerStreamingCall(
-          getChannel(), getMakeOrderMethod(), getCallOptions(), request);
     }
   }
 
@@ -339,10 +331,6 @@ public final class restaurantsGrpc {
           serviceImpl.makeReservation((com.SmartWatchgRPC.Restaurants.reservationDetails) request,
               (io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.reservationConfirmation>) responseObserver);
           break;
-        case METHODID_MAKE_ORDER:
-          serviceImpl.makeOrder((com.SmartWatchgRPC.Restaurants.orderDetails) request,
-              (io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderConfirmation>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -353,6 +341,9 @@ public final class restaurantsGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_MAKE_ORDER:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.makeOrder(
+              (io.grpc.stub.StreamObserver<com.SmartWatchgRPC.Restaurants.orderConfirmation>) responseObserver);
         default:
           throw new AssertionError();
       }

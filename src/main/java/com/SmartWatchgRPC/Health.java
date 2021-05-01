@@ -29,14 +29,14 @@ public final class Health {
         getActivityTypeBytes();
 
     /**
-     * <code>int32 time = 2;</code>
+     * <code>double time = 2;</code>
      */
-    int getTime();
+    double getTime();
 
     /**
-     * <code>int32 distance = 3;</code>
+     * <code>double distance = 3;</code>
      */
-    int getDistance();
+    double getDistance();
 
     /**
      * <code>int32 calories = 4;</code>
@@ -57,8 +57,8 @@ public final class Health {
     }
     private stats() {
       activityType_ = "";
-      time_ = 0;
-      distance_ = 0;
+      time_ = 0D;
+      distance_ = 0D;
       calories_ = 0;
     }
 
@@ -92,14 +92,14 @@ public final class Health {
               activityType_ = s;
               break;
             }
-            case 16: {
+            case 17: {
 
-              time_ = input.readInt32();
+              time_ = input.readDouble();
               break;
             }
-            case 24: {
+            case 25: {
 
-              distance_ = input.readInt32();
+              distance_ = input.readDouble();
               break;
             }
             case 32: {
@@ -174,20 +174,20 @@ public final class Health {
     }
 
     public static final int TIME_FIELD_NUMBER = 2;
-    private int time_;
+    private double time_;
     /**
-     * <code>int32 time = 2;</code>
+     * <code>double time = 2;</code>
      */
-    public int getTime() {
+    public double getTime() {
       return time_;
     }
 
     public static final int DISTANCE_FIELD_NUMBER = 3;
-    private int distance_;
+    private double distance_;
     /**
-     * <code>int32 distance = 3;</code>
+     * <code>double distance = 3;</code>
      */
-    public int getDistance() {
+    public double getDistance() {
       return distance_;
     }
 
@@ -217,11 +217,11 @@ public final class Health {
       if (!getActivityTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, activityType_);
       }
-      if (time_ != 0) {
-        output.writeInt32(2, time_);
+      if (time_ != 0D) {
+        output.writeDouble(2, time_);
       }
-      if (distance_ != 0) {
-        output.writeInt32(3, distance_);
+      if (distance_ != 0D) {
+        output.writeDouble(3, distance_);
       }
       if (calories_ != 0) {
         output.writeInt32(4, calories_);
@@ -238,13 +238,13 @@ public final class Health {
       if (!getActivityTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, activityType_);
       }
-      if (time_ != 0) {
+      if (time_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, time_);
+          .computeDoubleSize(2, time_);
       }
-      if (distance_ != 0) {
+      if (distance_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, distance_);
+          .computeDoubleSize(3, distance_);
       }
       if (calories_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -268,10 +268,14 @@ public final class Health {
       boolean result = true;
       result = result && getActivityType()
           .equals(other.getActivityType());
-      result = result && (getTime()
-          == other.getTime());
-      result = result && (getDistance()
-          == other.getDistance());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTime())
+          == java.lang.Double.doubleToLongBits(
+              other.getTime()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDistance())
+          == java.lang.Double.doubleToLongBits(
+              other.getDistance()));
       result = result && (getCalories()
           == other.getCalories());
       result = result && unknownFields.equals(other.unknownFields);
@@ -288,9 +292,11 @@ public final class Health {
       hash = (37 * hash) + ACTIVITYTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getActivityType().hashCode();
       hash = (37 * hash) + TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getTime();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTime()));
       hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
-      hash = (53 * hash) + getDistance();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDistance()));
       hash = (37 * hash) + CALORIES_FIELD_NUMBER;
       hash = (53 * hash) + getCalories();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -428,9 +434,9 @@ public final class Health {
         super.clear();
         activityType_ = "";
 
-        time_ = 0;
+        time_ = 0D;
 
-        distance_ = 0;
+        distance_ = 0D;
 
         calories_ = 0;
 
@@ -516,10 +522,10 @@ public final class Health {
           activityType_ = other.activityType_;
           onChanged();
         }
-        if (other.getTime() != 0) {
+        if (other.getTime() != 0D) {
           setTime(other.getTime());
         }
-        if (other.getDistance() != 0) {
+        if (other.getDistance() != 0D) {
           setDistance(other.getDistance());
         }
         if (other.getCalories() != 0) {
@@ -623,54 +629,54 @@ public final class Health {
         return this;
       }
 
-      private int time_ ;
+      private double time_ ;
       /**
-       * <code>int32 time = 2;</code>
+       * <code>double time = 2;</code>
        */
-      public int getTime() {
+      public double getTime() {
         return time_;
       }
       /**
-       * <code>int32 time = 2;</code>
+       * <code>double time = 2;</code>
        */
-      public Builder setTime(int value) {
+      public Builder setTime(double value) {
         
         time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 time = 2;</code>
+       * <code>double time = 2;</code>
        */
       public Builder clearTime() {
         
-        time_ = 0;
+        time_ = 0D;
         onChanged();
         return this;
       }
 
-      private int distance_ ;
+      private double distance_ ;
       /**
-       * <code>int32 distance = 3;</code>
+       * <code>double distance = 3;</code>
        */
-      public int getDistance() {
+      public double getDistance() {
         return distance_;
       }
       /**
-       * <code>int32 distance = 3;</code>
+       * <code>double distance = 3;</code>
        */
-      public Builder setDistance(int value) {
+      public Builder setDistance(double value) {
         
         distance_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 distance = 3;</code>
+       * <code>double distance = 3;</code>
        */
       public Builder clearDistance() {
         
-        distance_ = 0;
+        distance_ = 0D;
         onChanged();
         return this;
       }
@@ -1445,9 +1451,9 @@ public final class Health {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>double longtitude = 1;</code>
+     * <code>double longitude = 1;</code>
      */
-    double getLongtitude();
+    double getLongitude();
 
     /**
      * <code>double latitude = 2;</code>
@@ -1467,7 +1473,7 @@ public final class Health {
       super(builder);
     }
     private location() {
-      longtitude_ = 0D;
+      longitude_ = 0D;
       latitude_ = 0D;
     }
 
@@ -1497,7 +1503,7 @@ public final class Health {
               break;
             case 9: {
 
-              longtitude_ = input.readDouble();
+              longitude_ = input.readDouble();
               break;
             }
             case 17: {
@@ -1537,13 +1543,13 @@ public final class Health {
               com.SmartWatchgRPC.Health.location.class, com.SmartWatchgRPC.Health.location.Builder.class);
     }
 
-    public static final int LONGTITUDE_FIELD_NUMBER = 1;
-    private double longtitude_;
+    public static final int LONGITUDE_FIELD_NUMBER = 1;
+    private double longitude_;
     /**
-     * <code>double longtitude = 1;</code>
+     * <code>double longitude = 1;</code>
      */
-    public double getLongtitude() {
-      return longtitude_;
+    public double getLongitude() {
+      return longitude_;
     }
 
     public static final int LATITUDE_FIELD_NUMBER = 2;
@@ -1569,8 +1575,8 @@ public final class Health {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (longtitude_ != 0D) {
-        output.writeDouble(1, longtitude_);
+      if (longitude_ != 0D) {
+        output.writeDouble(1, longitude_);
       }
       if (latitude_ != 0D) {
         output.writeDouble(2, latitude_);
@@ -1584,9 +1590,9 @@ public final class Health {
       if (size != -1) return size;
 
       size = 0;
-      if (longtitude_ != 0D) {
+      if (longitude_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, longtitude_);
+          .computeDoubleSize(1, longitude_);
       }
       if (latitude_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -1609,9 +1615,9 @@ public final class Health {
 
       boolean result = true;
       result = result && (
-          java.lang.Double.doubleToLongBits(getLongtitude())
+          java.lang.Double.doubleToLongBits(getLongitude())
           == java.lang.Double.doubleToLongBits(
-              other.getLongtitude()));
+              other.getLongitude()));
       result = result && (
           java.lang.Double.doubleToLongBits(getLatitude())
           == java.lang.Double.doubleToLongBits(
@@ -1627,9 +1633,9 @@ public final class Health {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LONGTITUDE_FIELD_NUMBER;
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongtitude()));
+          java.lang.Double.doubleToLongBits(getLongitude()));
       hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getLatitude()));
@@ -1766,7 +1772,7 @@ public final class Health {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        longtitude_ = 0D;
+        longitude_ = 0D;
 
         latitude_ = 0D;
 
@@ -1796,7 +1802,7 @@ public final class Health {
       @java.lang.Override
       public com.SmartWatchgRPC.Health.location buildPartial() {
         com.SmartWatchgRPC.Health.location result = new com.SmartWatchgRPC.Health.location(this);
-        result.longtitude_ = longtitude_;
+        result.longitude_ = longitude_;
         result.latitude_ = latitude_;
         onBuilt();
         return result;
@@ -1846,8 +1852,8 @@ public final class Health {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Health.location other) {
         if (other == com.SmartWatchgRPC.Health.location.getDefaultInstance()) return this;
-        if (other.getLongtitude() != 0D) {
-          setLongtitude(other.getLongtitude());
+        if (other.getLongitude() != 0D) {
+          setLongitude(other.getLongitude());
         }
         if (other.getLatitude() != 0D) {
           setLatitude(other.getLatitude());
@@ -1881,28 +1887,28 @@ public final class Health {
         return this;
       }
 
-      private double longtitude_ ;
+      private double longitude_ ;
       /**
-       * <code>double longtitude = 1;</code>
+       * <code>double longitude = 1;</code>
        */
-      public double getLongtitude() {
-        return longtitude_;
+      public double getLongitude() {
+        return longitude_;
       }
       /**
-       * <code>double longtitude = 1;</code>
+       * <code>double longitude = 1;</code>
        */
-      public Builder setLongtitude(double value) {
+      public Builder setLongitude(double value) {
         
-        longtitude_ = value;
+        longitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double longtitude = 1;</code>
+       * <code>double longitude = 1;</code>
        */
-      public Builder clearLongtitude() {
+      public Builder clearLongitude() {
         
-        longtitude_ = 0D;
+        longitude_ = 0D;
         onChanged();
         return this;
       }
@@ -1990,9 +1996,14 @@ public final class Health {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes image = 1;</code>
+     * <code>string image = 1;</code>
      */
-    com.google.protobuf.ByteString getImage();
+    java.lang.String getImage();
+    /**
+     * <code>string image = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
   }
   /**
    * Protobuf type {@code map}
@@ -2007,7 +2018,7 @@ public final class Health {
       super(builder);
     }
     private map() {
-      image_ = com.google.protobuf.ByteString.EMPTY;
+      image_ = "";
     }
 
     @java.lang.Override
@@ -2035,8 +2046,9 @@ public final class Health {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              image_ = input.readBytes();
+              image_ = s;
               break;
             }
             default: {
@@ -2072,12 +2084,37 @@ public final class Health {
     }
 
     public static final int IMAGE_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString image_;
+    private volatile java.lang.Object image_;
     /**
-     * <code>bytes image = 1;</code>
+     * <code>string image = 1;</code>
      */
-    public com.google.protobuf.ByteString getImage() {
-      return image_;
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2094,8 +2131,8 @@ public final class Health {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!image_.isEmpty()) {
-        output.writeBytes(1, image_);
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
       }
       unknownFields.writeTo(output);
     }
@@ -2106,9 +2143,8 @@ public final class Health {
       if (size != -1) return size;
 
       size = 0;
-      if (!image_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, image_);
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2274,7 +2310,7 @@ public final class Health {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        image_ = com.google.protobuf.ByteString.EMPTY;
+        image_ = "";
 
         return this;
       }
@@ -2351,8 +2387,9 @@ public final class Health {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Health.map other) {
         if (other == com.SmartWatchgRPC.Health.map.getDefaultInstance()) return this;
-        if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
-          setImage(other.getImage());
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2383,17 +2420,43 @@ public final class Health {
         return this;
       }
 
-      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object image_ = "";
       /**
-       * <code>bytes image = 1;</code>
+       * <code>string image = 1;</code>
        */
-      public com.google.protobuf.ByteString getImage() {
-        return image_;
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bytes image = 1;</code>
+       * <code>string image = 1;</code>
        */
-      public Builder setImage(com.google.protobuf.ByteString value) {
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 1;</code>
+       */
+      public Builder setImage(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2403,11 +2466,25 @@ public final class Health {
         return this;
       }
       /**
-       * <code>bytes image = 1;</code>
+       * <code>string image = 1;</code>
        */
       public Builder clearImage() {
         
         image_ = getDefaultInstance().getImage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 1;</code>
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        image_ = value;
         onChanged();
         return this;
       }
@@ -2494,15 +2571,15 @@ public final class Health {
   static {
     java.lang.String[] descriptorData = {
       "\n\014health.proto\"O\n\005stats\022\024\n\014activityType\030" +
-      "\001 \001(\t\022\014\n\004time\030\002 \001(\005\022\020\n\010distance\030\003 \001(\005\022\020\n" +
+      "\001 \001(\t\022\014\n\004time\030\002 \001(\001\022\020\n\010distance\030\003 \001(\001\022\020\n" +
       "\010calories\030\004 \001(\005\"-\n\010feedback\022\017\n\007summary\030\001" +
-      " \001(\t\022\020\n\010feedback\030\002 \001(\t\"0\n\010location\022\022\n\nlo" +
-      "ngtitude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\"\024\n\003map\022" +
-      "\r\n\005image\030\001 \001(\0142y\n\006health\022#\n\016recordActivi" +
-      "ty\022\006.stats\032\t.feedback\022\"\n\rtrackLocation\022\t" +
-      ".location\032\004.map(\001\022&\n\rpairEquipment\022\006.sta" +
-      "ts\032\t.feedback(\0010\001B\024\n\022com.SmartWatchgRPCb" +
-      "\006proto3"
+      " \001(\t\022\020\n\010feedback\030\002 \001(\t\"/\n\010location\022\021\n\tlo" +
+      "ngitude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\"\024\n\003map\022\r" +
+      "\n\005image\030\001 \001(\t2y\n\006health\022#\n\016recordActivit" +
+      "y\022\006.stats\032\t.feedback\022\"\n\rtrackLocation\022\t." +
+      "location\032\004.map(\001\022&\n\rpairEquipment\022\006.stat" +
+      "s\032\t.feedback(\0010\001B\024\n\022com.SmartWatchgRPCb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2533,7 +2610,7 @@ public final class Health {
     internal_static_location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_location_descriptor,
-        new java.lang.String[] { "Longtitude", "Latitude", });
+        new java.lang.String[] { "Longitude", "Latitude", });
     internal_static_map_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_map_fieldAccessorTable = new

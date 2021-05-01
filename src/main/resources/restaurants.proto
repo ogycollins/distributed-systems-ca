@@ -8,7 +8,7 @@ service restaurants{
 	
 	rpc makeReservation(reservationDetails) returns (reservationConfirmation);
 	
-	rpc makeOrder(orderDetails) returns (stream orderConfirmation);
+	rpc makeOrder(stream orderDetails) returns (orderConfirmation);
 }
 
 message location {
@@ -29,18 +29,16 @@ message reservationDetails {
 }
 
 message reservationConfirmation {
-  bool confirmation = 1;
   string reservationSummary = 2;  
 }
 
 message orderDetails {
-  bool confirmation = 1;
-   string item = 2;  
+  string item = 2;  
   string paymentDetails = 3;
 }
 
 message orderConfirmation {
-  bool confirmation = 1;
-  string orderSummary = 2; 
+  string orderSummary = 1; 
+  string totalCost = 2;
   
 }

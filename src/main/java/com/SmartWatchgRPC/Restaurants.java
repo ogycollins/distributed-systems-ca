@@ -1864,11 +1864,6 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool confirmation = 1;</code>
-     */
-    boolean getConfirmation();
-
-    /**
      * <code>string reservationSummary = 2;</code>
      */
     java.lang.String getReservationSummary();
@@ -1891,7 +1886,6 @@ public final class Restaurants {
       super(builder);
     }
     private reservationConfirmation() {
-      confirmation_ = false;
       reservationSummary_ = "";
     }
 
@@ -1919,11 +1913,6 @@ public final class Restaurants {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              confirmation_ = input.readBool();
-              break;
-            }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1960,15 +1949,6 @@ public final class Restaurants {
       return com.SmartWatchgRPC.Restaurants.internal_static_reservationConfirmation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.SmartWatchgRPC.Restaurants.reservationConfirmation.class, com.SmartWatchgRPC.Restaurants.reservationConfirmation.Builder.class);
-    }
-
-    public static final int CONFIRMATION_FIELD_NUMBER = 1;
-    private boolean confirmation_;
-    /**
-     * <code>bool confirmation = 1;</code>
-     */
-    public boolean getConfirmation() {
-      return confirmation_;
     }
 
     public static final int RESERVATIONSUMMARY_FIELD_NUMBER = 2;
@@ -2019,9 +1999,6 @@ public final class Restaurants {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (confirmation_ != false) {
-        output.writeBool(1, confirmation_);
-      }
       if (!getReservationSummaryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reservationSummary_);
       }
@@ -2034,10 +2011,6 @@ public final class Restaurants {
       if (size != -1) return size;
 
       size = 0;
-      if (confirmation_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, confirmation_);
-      }
       if (!getReservationSummaryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reservationSummary_);
       }
@@ -2057,8 +2030,6 @@ public final class Restaurants {
       com.SmartWatchgRPC.Restaurants.reservationConfirmation other = (com.SmartWatchgRPC.Restaurants.reservationConfirmation) obj;
 
       boolean result = true;
-      result = result && (getConfirmation()
-          == other.getConfirmation());
       result = result && getReservationSummary()
           .equals(other.getReservationSummary());
       result = result && unknownFields.equals(other.unknownFields);
@@ -2072,9 +2043,6 @@ public final class Restaurants {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getConfirmation());
       hash = (37 * hash) + RESERVATIONSUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationSummary().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2210,8 +2178,6 @@ public final class Restaurants {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        confirmation_ = false;
-
         reservationSummary_ = "";
 
         return this;
@@ -2240,7 +2206,6 @@ public final class Restaurants {
       @java.lang.Override
       public com.SmartWatchgRPC.Restaurants.reservationConfirmation buildPartial() {
         com.SmartWatchgRPC.Restaurants.reservationConfirmation result = new com.SmartWatchgRPC.Restaurants.reservationConfirmation(this);
-        result.confirmation_ = confirmation_;
         result.reservationSummary_ = reservationSummary_;
         onBuilt();
         return result;
@@ -2290,9 +2255,6 @@ public final class Restaurants {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.reservationConfirmation other) {
         if (other == com.SmartWatchgRPC.Restaurants.reservationConfirmation.getDefaultInstance()) return this;
-        if (other.getConfirmation() != false) {
-          setConfirmation(other.getConfirmation());
-        }
         if (!other.getReservationSummary().isEmpty()) {
           reservationSummary_ = other.reservationSummary_;
           onChanged();
@@ -2323,32 +2285,6 @@ public final class Restaurants {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private boolean confirmation_ ;
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public boolean getConfirmation() {
-        return confirmation_;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder setConfirmation(boolean value) {
-        
-        confirmation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder clearConfirmation() {
-        
-        confirmation_ = false;
-        onChanged();
         return this;
       }
 
@@ -2478,11 +2414,6 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool confirmation = 1;</code>
-     */
-    boolean getConfirmation();
-
-    /**
      * <code>string item = 2;</code>
      */
     java.lang.String getItem();
@@ -2515,7 +2446,6 @@ public final class Restaurants {
       super(builder);
     }
     private orderDetails() {
-      confirmation_ = false;
       item_ = "";
       paymentDetails_ = "";
     }
@@ -2544,11 +2474,6 @@ public final class Restaurants {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              confirmation_ = input.readBool();
-              break;
-            }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2591,15 +2516,6 @@ public final class Restaurants {
       return com.SmartWatchgRPC.Restaurants.internal_static_orderDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.SmartWatchgRPC.Restaurants.orderDetails.class, com.SmartWatchgRPC.Restaurants.orderDetails.Builder.class);
-    }
-
-    public static final int CONFIRMATION_FIELD_NUMBER = 1;
-    private boolean confirmation_;
-    /**
-     * <code>bool confirmation = 1;</code>
-     */
-    public boolean getConfirmation() {
-      return confirmation_;
     }
 
     public static final int ITEM_FIELD_NUMBER = 2;
@@ -2684,9 +2600,6 @@ public final class Restaurants {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (confirmation_ != false) {
-        output.writeBool(1, confirmation_);
-      }
       if (!getItemBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, item_);
       }
@@ -2702,10 +2615,6 @@ public final class Restaurants {
       if (size != -1) return size;
 
       size = 0;
-      if (confirmation_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, confirmation_);
-      }
       if (!getItemBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, item_);
       }
@@ -2728,8 +2637,6 @@ public final class Restaurants {
       com.SmartWatchgRPC.Restaurants.orderDetails other = (com.SmartWatchgRPC.Restaurants.orderDetails) obj;
 
       boolean result = true;
-      result = result && (getConfirmation()
-          == other.getConfirmation());
       result = result && getItem()
           .equals(other.getItem());
       result = result && getPaymentDetails()
@@ -2745,9 +2652,6 @@ public final class Restaurants {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getConfirmation());
       hash = (37 * hash) + ITEM_FIELD_NUMBER;
       hash = (53 * hash) + getItem().hashCode();
       hash = (37 * hash) + PAYMENTDETAILS_FIELD_NUMBER;
@@ -2885,8 +2789,6 @@ public final class Restaurants {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        confirmation_ = false;
-
         item_ = "";
 
         paymentDetails_ = "";
@@ -2917,7 +2819,6 @@ public final class Restaurants {
       @java.lang.Override
       public com.SmartWatchgRPC.Restaurants.orderDetails buildPartial() {
         com.SmartWatchgRPC.Restaurants.orderDetails result = new com.SmartWatchgRPC.Restaurants.orderDetails(this);
-        result.confirmation_ = confirmation_;
         result.item_ = item_;
         result.paymentDetails_ = paymentDetails_;
         onBuilt();
@@ -2968,9 +2869,6 @@ public final class Restaurants {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.orderDetails other) {
         if (other == com.SmartWatchgRPC.Restaurants.orderDetails.getDefaultInstance()) return this;
-        if (other.getConfirmation() != false) {
-          setConfirmation(other.getConfirmation());
-        }
         if (!other.getItem().isEmpty()) {
           item_ = other.item_;
           onChanged();
@@ -3005,32 +2903,6 @@ public final class Restaurants {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private boolean confirmation_ ;
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public boolean getConfirmation() {
-        return confirmation_;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder setConfirmation(boolean value) {
-        
-        confirmation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder clearConfirmation() {
-        
-        confirmation_ = false;
-        onChanged();
         return this;
       }
 
@@ -3229,19 +3101,24 @@ public final class Restaurants {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool confirmation = 1;</code>
-     */
-    boolean getConfirmation();
-
-    /**
-     * <code>string orderSummary = 2;</code>
+     * <code>string orderSummary = 1;</code>
      */
     java.lang.String getOrderSummary();
     /**
-     * <code>string orderSummary = 2;</code>
+     * <code>string orderSummary = 1;</code>
      */
     com.google.protobuf.ByteString
         getOrderSummaryBytes();
+
+    /**
+     * <code>string totalCost = 2;</code>
+     */
+    java.lang.String getTotalCost();
+    /**
+     * <code>string totalCost = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTotalCostBytes();
   }
   /**
    * Protobuf type {@code orderConfirmation}
@@ -3256,8 +3133,8 @@ public final class Restaurants {
       super(builder);
     }
     private orderConfirmation() {
-      confirmation_ = false;
       orderSummary_ = "";
+      totalCost_ = "";
     }
 
     @java.lang.Override
@@ -3284,15 +3161,16 @@ public final class Restaurants {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              confirmation_ = input.readBool();
+              orderSummary_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              orderSummary_ = s;
+              totalCost_ = s;
               break;
             }
             default: {
@@ -3327,19 +3205,10 @@ public final class Restaurants {
               com.SmartWatchgRPC.Restaurants.orderConfirmation.class, com.SmartWatchgRPC.Restaurants.orderConfirmation.Builder.class);
     }
 
-    public static final int CONFIRMATION_FIELD_NUMBER = 1;
-    private boolean confirmation_;
-    /**
-     * <code>bool confirmation = 1;</code>
-     */
-    public boolean getConfirmation() {
-      return confirmation_;
-    }
-
-    public static final int ORDERSUMMARY_FIELD_NUMBER = 2;
+    public static final int ORDERSUMMARY_FIELD_NUMBER = 1;
     private volatile java.lang.Object orderSummary_;
     /**
-     * <code>string orderSummary = 2;</code>
+     * <code>string orderSummary = 1;</code>
      */
     public java.lang.String getOrderSummary() {
       java.lang.Object ref = orderSummary_;
@@ -3354,7 +3223,7 @@ public final class Restaurants {
       }
     }
     /**
-     * <code>string orderSummary = 2;</code>
+     * <code>string orderSummary = 1;</code>
      */
     public com.google.protobuf.ByteString
         getOrderSummaryBytes() {
@@ -3364,6 +3233,40 @@ public final class Restaurants {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         orderSummary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOTALCOST_FIELD_NUMBER = 2;
+    private volatile java.lang.Object totalCost_;
+    /**
+     * <code>string totalCost = 2;</code>
+     */
+    public java.lang.String getTotalCost() {
+      java.lang.Object ref = totalCost_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalCost_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string totalCost = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTotalCostBytes() {
+      java.lang.Object ref = totalCost_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalCost_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3384,11 +3287,11 @@ public final class Restaurants {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (confirmation_ != false) {
-        output.writeBool(1, confirmation_);
-      }
       if (!getOrderSummaryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orderSummary_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, orderSummary_);
+      }
+      if (!getTotalCostBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, totalCost_);
       }
       unknownFields.writeTo(output);
     }
@@ -3399,12 +3302,11 @@ public final class Restaurants {
       if (size != -1) return size;
 
       size = 0;
-      if (confirmation_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, confirmation_);
-      }
       if (!getOrderSummaryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orderSummary_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, orderSummary_);
+      }
+      if (!getTotalCostBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, totalCost_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3422,10 +3324,10 @@ public final class Restaurants {
       com.SmartWatchgRPC.Restaurants.orderConfirmation other = (com.SmartWatchgRPC.Restaurants.orderConfirmation) obj;
 
       boolean result = true;
-      result = result && (getConfirmation()
-          == other.getConfirmation());
       result = result && getOrderSummary()
           .equals(other.getOrderSummary());
+      result = result && getTotalCost()
+          .equals(other.getTotalCost());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3437,11 +3339,10 @@ public final class Restaurants {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONFIRMATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getConfirmation());
       hash = (37 * hash) + ORDERSUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getOrderSummary().hashCode();
+      hash = (37 * hash) + TOTALCOST_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalCost().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3575,9 +3476,9 @@ public final class Restaurants {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        confirmation_ = false;
-
         orderSummary_ = "";
+
+        totalCost_ = "";
 
         return this;
       }
@@ -3605,8 +3506,8 @@ public final class Restaurants {
       @java.lang.Override
       public com.SmartWatchgRPC.Restaurants.orderConfirmation buildPartial() {
         com.SmartWatchgRPC.Restaurants.orderConfirmation result = new com.SmartWatchgRPC.Restaurants.orderConfirmation(this);
-        result.confirmation_ = confirmation_;
         result.orderSummary_ = orderSummary_;
+        result.totalCost_ = totalCost_;
         onBuilt();
         return result;
       }
@@ -3655,11 +3556,12 @@ public final class Restaurants {
 
       public Builder mergeFrom(com.SmartWatchgRPC.Restaurants.orderConfirmation other) {
         if (other == com.SmartWatchgRPC.Restaurants.orderConfirmation.getDefaultInstance()) return this;
-        if (other.getConfirmation() != false) {
-          setConfirmation(other.getConfirmation());
-        }
         if (!other.getOrderSummary().isEmpty()) {
           orderSummary_ = other.orderSummary_;
+          onChanged();
+        }
+        if (!other.getTotalCost().isEmpty()) {
+          totalCost_ = other.totalCost_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3691,35 +3593,9 @@ public final class Restaurants {
         return this;
       }
 
-      private boolean confirmation_ ;
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public boolean getConfirmation() {
-        return confirmation_;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder setConfirmation(boolean value) {
-        
-        confirmation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool confirmation = 1;</code>
-       */
-      public Builder clearConfirmation() {
-        
-        confirmation_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object orderSummary_ = "";
       /**
-       * <code>string orderSummary = 2;</code>
+       * <code>string orderSummary = 1;</code>
        */
       public java.lang.String getOrderSummary() {
         java.lang.Object ref = orderSummary_;
@@ -3734,7 +3610,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string orderSummary = 2;</code>
+       * <code>string orderSummary = 1;</code>
        */
       public com.google.protobuf.ByteString
           getOrderSummaryBytes() {
@@ -3750,7 +3626,7 @@ public final class Restaurants {
         }
       }
       /**
-       * <code>string orderSummary = 2;</code>
+       * <code>string orderSummary = 1;</code>
        */
       public Builder setOrderSummary(
           java.lang.String value) {
@@ -3763,7 +3639,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string orderSummary = 2;</code>
+       * <code>string orderSummary = 1;</code>
        */
       public Builder clearOrderSummary() {
         
@@ -3772,7 +3648,7 @@ public final class Restaurants {
         return this;
       }
       /**
-       * <code>string orderSummary = 2;</code>
+       * <code>string orderSummary = 1;</code>
        */
       public Builder setOrderSummaryBytes(
           com.google.protobuf.ByteString value) {
@@ -3782,6 +3658,75 @@ public final class Restaurants {
   checkByteStringIsUtf8(value);
         
         orderSummary_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object totalCost_ = "";
+      /**
+       * <code>string totalCost = 2;</code>
+       */
+      public java.lang.String getTotalCost() {
+        java.lang.Object ref = totalCost_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalCost_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string totalCost = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTotalCostBytes() {
+        java.lang.Object ref = totalCost_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalCost_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string totalCost = 2;</code>
+       */
+      public Builder setTotalCost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        totalCost_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string totalCost = 2;</code>
+       */
+      public Builder clearTotalCost() {
+        
+        totalCost_ = getDefaultInstance().getTotalCost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string totalCost = 2;</code>
+       */
+      public Builder setTotalCostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        totalCost_ = value;
         onChanged();
         return this;
       }
@@ -3881,18 +3826,17 @@ public final class Restaurants {
       "ude\030\001 \001(\001\022\022\n\nlongtitude\030\002 \001(\001\"\'\n\nrestaur" +
       "ant\022\031\n\021restaurantDetails\030\001 \001(\t\"Q\n\022reserv" +
       "ationDetails\022\014\n\004time\030\001 \001(\t\022\026\n\016restaurant" +
-      "Name\030\002 \001(\t\022\025\n\rnumberOfSeats\030\003 \001(\005\"K\n\027res" +
-      "ervationConfirmation\022\024\n\014confirmation\030\001 \001" +
-      "(\010\022\032\n\022reservationSummary\030\002 \001(\t\"J\n\014orderD" +
-      "etails\022\024\n\014confirmation\030\001 \001(\010\022\014\n\004item\030\002 \001" +
-      "(\t\022\026\n\016paymentDetails\030\003 \001(\t\"?\n\021orderConfi" +
-      "rmation\022\024\n\014confirmation\030\001 \001(\010\022\024\n\014orderSu" +
-      "mmary\030\002 \001(\t2\255\001\n\013restaurants\022*\n\016getRestau" +
-      "rants\022\t.location\032\013.restaurant0\001\022@\n\017makeR" +
-      "eservation\022\023.reservationDetails\032\030.reserv" +
-      "ationConfirmation\0220\n\tmakeOrder\022\r.orderDe" +
-      "tails\032\022.orderConfirmation0\001B\024\n\022com.Smart" +
-      "WatchgRPCb\006proto3"
+      "Name\030\002 \001(\t\022\025\n\rnumberOfSeats\030\003 \001(\005\"5\n\027res" +
+      "ervationConfirmation\022\032\n\022reservationSumma" +
+      "ry\030\002 \001(\t\"4\n\014orderDetails\022\014\n\004item\030\002 \001(\t\022\026" +
+      "\n\016paymentDetails\030\003 \001(\t\"<\n\021orderConfirmat" +
+      "ion\022\024\n\014orderSummary\030\001 \001(\t\022\021\n\ttotalCost\030\002" +
+      " \001(\t2\255\001\n\013restaurants\022*\n\016getRestaurants\022\t" +
+      ".location\032\013.restaurant0\001\022@\n\017makeReservat" +
+      "ion\022\023.reservationDetails\032\030.reservationCo" +
+      "nfirmation\0220\n\tmakeOrder\022\r.orderDetails\032\022" +
+      ".orderConfirmation(\001B\024\n\022com.SmartWatchgR" +
+      "PCb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3929,19 +3873,19 @@ public final class Restaurants {
     internal_static_reservationConfirmation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_reservationConfirmation_descriptor,
-        new java.lang.String[] { "Confirmation", "ReservationSummary", });
+        new java.lang.String[] { "ReservationSummary", });
     internal_static_orderDetails_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_orderDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_orderDetails_descriptor,
-        new java.lang.String[] { "Confirmation", "Item", "PaymentDetails", });
+        new java.lang.String[] { "Item", "PaymentDetails", });
     internal_static_orderConfirmation_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_orderConfirmation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_orderConfirmation_descriptor,
-        new java.lang.String[] { "Confirmation", "OrderSummary", });
+        new java.lang.String[] { "OrderSummary", "TotalCost", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
